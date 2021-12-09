@@ -4,7 +4,7 @@ import getUser from '../utils/getUser'
 const Index = ({ repos, user }) => {
   return (
     <div className='container mx-auto'>
-      <h1 className='text-5xl'>Olá, eu sou o Moacyr Santana</h1>
+      <h1 className='text-5xl'>Meus repositorios, eu sou o Moacyr Santana</h1>
       <p>Github stats: Public Repos: {user.public_repos} / Public Gists: {user.public_gists} / Followers: {user.followers}</p>
       <h2 className='font-bold text-3xl'>Meus repositórios no Github</h2>
       {repos.map(repo => {
