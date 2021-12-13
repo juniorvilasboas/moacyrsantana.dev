@@ -1,17 +1,17 @@
 import React from 'react'
 import getUser from '../utils/getUser'
-import { FaLinkedin, FaGithub, FaYoutube } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaYoutube, FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa';
 import { FiLink } from 'react-icons/fi';
 
-const Index = ({ repos, user }) => {
+const Portifolio = ({ repos, user }) => {
   return (
     <div className='container mx-auto'>
       <nav id='menu' className='p-4'>
         <h3 className='float-left ml-36'>Personal</h3>
         <ul>
           <li className='mr-10'><a href='/'>Home</a></li>
-          <li className='mr-10'><a className='text-dourado' href='/repositorios'>Repositorio</a></li>
-          <li className='mr-10'><a href='/portifolios'>Portifolio</a></li>
+          <li className='mr-10'><a href='/repositorios'>Repositorio</a></li>
+          <li className='mr-10'><a className='text-dourado' href='/portifolios'>Portifolio</a></li>
           <li className='mr-20 border-2 border-dourado py-2 px-4 rounded-xl'><a href='/contact'>Contact</a></li>
         </ul>
       </nav>
@@ -43,31 +43,38 @@ const Index = ({ repos, user }) => {
         <p className='text-2xl pt-6 px-16 font-bold'>Fullstack Developer asdlkfjaslkdfjçaslkdfjçslakdfjçsdlk</p>
         <p className='text-2xl pt-6 px-16 font-bold'>Fullstack Developer asdlkfjaslkdfjçaslkdfjçslakdfjçsdlk</p>
       </div>
-      <h1 className='text-5xl'>Meus repositorios, eu sou o Moacyr Santana</h1>
-      <p>Github stats: Public Repos: {user.public_repos} / Public Gists: {user.public_gists} / Followers: {user.followers}</p>
-      <h2 className='font-bold text-3xl'>Meus repositórios no Github</h2>
-      {repos.map(repo => {
-        return (
-          <div key={repo.id} className='rounded bg-gray-200 mx-8 my-4 p-4 hover:shadow-md'>
-            <h3 className='font-bold'>{repo.full_name}</h3>
-            <p>Language: {repo.language} / Stars: {repo.stargazers_count}</p>
-          </div>
-        )
-      })}
+
+      <div>
+        <h3 className=' text-dourado text-2xl font-bold text-center uppercase mt-10 mb-5'>My Education</h3>
+        <div className='grid grid-cols-3 bg-white w-4/5 mx-auto leading-none rounded-xl shadow-lg py-6'>
+          {[1,2,3].map( i => (
+            <div className='border-dashed border-l px-12'>
+              <h4 className='text-dourado text-lg uppercase font-bold'>Master's Degree</h4>
+              <p className='text-xl uppercase'>Computer Sience <br />
+              <span className='text-lg normal-case font-bold'>UNIFACS - University of Salvador</span></p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className='footer-basic'>
+        <footer>
+            <div className='social'>
+              <a href="https://www.instagram.com/moacyr.santana/" target='_blank'><i className='icon ion-social-instagram'></i></a>
+              <a href="https://twitter.com/Santana_Sud" target='_blank'><i className='icon ion-social-twitter'></i></a>
+              <a href="https://www.facebook.com/junior.vilasboas/" target='_blank'><i className='icon ion-social-facebook'></i></a>
+            </div>
+            <ul className='list-inline'>
+                <li className='list-inline-item inline-block'><a href="/">Home</a></li>
+                <li className='list-inline-item inline-block'><a href="/repositorios">Repositorios</a></li>
+                <li className='list-inline-item inline-block'><a href="/portifolios">Portifolios</a></li>
+                <li className='list-inline-item inline-block'><a href="/contact">Contact</a></li>
+            </ul>
+            <p className='copyright'>Serveware Sistemas © 2021</p>
+        </footer>
+      </div>
     </div>
   )
 }
 
-export async function getServerSideProps(context) {
-  const { repos, user } = await getUser('juniorvilasboas')
-
-  return {
-    props: {
-      currentDate: new Date().toString(),
-      repos,
-      user
-    }
-  }
-}
-
-export default Index
+export default Portifolio

@@ -10,6 +10,7 @@ class MyApp extends App {
         <style jsx global>
           {`
             @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap');
+            @import url('https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css');
           `}
         </style>
         <Component {...pageProps} />
