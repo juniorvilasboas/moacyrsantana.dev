@@ -13,7 +13,8 @@ const getUser = async(username) => {
   const dontShowFilter = repo => dontShowRepos.indexOf(repo.full_name) === -1
   const extractData = repo => ({
     id: repo.id,
-    full_name: repo.full_name,
+    usuario: username,
+    name: repo.name,
     language: repo.language,
     stargazers_count: repo.stargazers_count
   })
