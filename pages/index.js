@@ -2,12 +2,13 @@ import React from 'react'
 import getUser from '../utils/getUser'
 import PageHead from '../components/PageHead'
 import Nav from '../components/Nav'
+import Footer from '../components/Footer';
+import Portfolio from '../components/portfolio';
+
 import { FaLinkedin, FaGithub, FaYoutube, FaStar } from 'react-icons/fa';
 import { FiLink, FiUsers } from 'react-icons/fi';
 import { GoGist, GoRepo } from 'react-icons/go';
 import { SiJavascript, SiHtml5, SiNodedotjs, SiReact, SiCss3 } from 'react-icons/si';
-import Footer from '../components/Footer';
-import Portfolio from '../components/portfolio';
 
 const Index = ({ repos, user, month }) => {
   return (
@@ -108,7 +109,6 @@ export async function getServerSideProps(context) {
 
   return {
     props: {
-      year: new Date().getFullYear(),
       month: new Date().getMonth(),
       repos,
       user

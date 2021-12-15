@@ -21,4 +21,12 @@ const Footer = ({ year }) => {
   )
 }
 
+export async function getServerSideProps(context) {
+  return {
+    props: {
+      year: new Date().getFullYear(),
+    }
+  }
+}
+
 export default Footer
