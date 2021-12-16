@@ -17,7 +17,7 @@ const Index = ({ repos, user, month, year }) => {
         <Hero month={month} />
         <Summary />
         <Education />
-        {/*<Repos repos={repos} user={user} />*/}
+        <Repos repos={repos} user={user} />
         <Ports />
       </div>
 
@@ -33,8 +33,8 @@ export async function getServerSideProps(context) {
     props: {
       year: new Date().getFullYear(),
       month: new Date().getMonth(),
-      //repos,
-      //user
+      repos,
+      user
     }
   }
 }
