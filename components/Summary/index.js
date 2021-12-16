@@ -1,0 +1,30 @@
+import React from 'react'
+import SummaryItem from './SummaryItem';
+import Techs from './Techs';
+
+const itens = [
+  {
+    title: 'Fullstack Developer'
+  },
+  {
+    title: 'Software Engineer'
+  }
+]
+
+const Summary = () => {
+  return (
+    <div className='rounded-xl bg-white shadow-lg mx-auto w-4/5 py-12'>
+      <h3 className='text-dourado text-3xl text-center mb-8'>What I do</h3>
+      <div className='md:grid md:grid-cols-2 bg-white w-4/5 mx-auto'>
+        <Techs />
+        <div className='mt-4'>
+          {itens.map( (item, i) => (
+            <SummaryItem key={'i', i} item={item} />
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default Summary
