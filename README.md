@@ -2,7 +2,7 @@
 
 Este projeto é o código-font do curriculo online de Moacyr Santana, disponível em: https://moacyrsantana.vercel.app/
 
-![Preview](https://github.com/juniorvilasboas/moacyrsantana.dev/blob/master/print.png?raw=true)
+![Preview](https://github.com/juniorvilasboas/moacyrsantana.dev/blob/main/print.png?raw=true)
 
 ## Inicio:
 
