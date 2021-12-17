@@ -13,11 +13,11 @@ const itens = [
 
 const Summary = () => {
   return (
-    <div className='rounded-xl bg-white shadow-lg mx-auto w-4/5 py-12'>
+    <div className='rounded-xl bg-white shadow-lg mx-auto py-12'>
       <h3 className='text-dourado text-3xl text-center mb-8'>What I do</h3>
-      <div className='md:grid md:grid-cols-2 bg-white w-4/5 mx-auto'>
+      <div className='md:grid md:grid-cols-2 bg-white mx-auto divide-y md:divide-y-0 px-2 md:px-6'>
         <Techs />
-        <div className='mt-4'>
+        <div className='mt-6 md:mt-2'>
           {itens.map( (item, i) => (
             <SummaryItem key={'i', i} item={item} />
           ))}

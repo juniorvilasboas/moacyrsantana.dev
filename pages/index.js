@@ -14,14 +14,14 @@ const Index = ({ repos, user, month, year }) => {
     <div id='home'>
       <PageHead />
       
-      <div className='container mx-auto'>
+      <div className='container mx-auto px-6'>
         {/**
         <Nav />
         */}
         <Hero month={month} />
         <Summary />
         <Education />
-        {/** <Repos repos={repos} user={user} /> */}
+        <Repos repos={repos} user={user} />
         <Ports />
       </div>
 
@@ -31,14 +31,14 @@ const Index = ({ repos, user, month, year }) => {
 }
 
 export async function getServerSideProps(context) {
-  {/** const { repos, user } = await getUser('juniorvilasboas') */}
+  const { repos, user } = await getUser('juniorvilasboas')
 
   return {
     props: {
       year: new Date().getFullYear(),
       month: new Date().getMonth(),
-      //repos,
-      //user
+      repos,
+      user
     }
   }
 }

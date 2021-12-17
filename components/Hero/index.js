@@ -3,7 +3,7 @@ import ContactMe from './ContactMe';
 
 const Hero = ({ month }) => {
   return (
-    <div className='md:grid md:grid-cols-2 pt-8 mx-auto leading-none w-10/12 md:w-2/3'>
+    <div className='md:grid md:grid-cols-2 pt-8 mx-auto leading-none'>
       <div className='md:pt-20'>
         <h1 className='text-2xl uppercase pl-10 md:pl-14 -mb-2'>Hi! I'm</h1>
         <h1 className='text-dourado text-2xl uppercase font-bold pl-10 md:pl-14 -mb-2 dourado'>Moacyr Santana</h1>

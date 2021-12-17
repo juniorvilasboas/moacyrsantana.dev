@@ -20,7 +20,7 @@ const Education = () => {
   return (
     <div id='education'>
       <h3 className=' text-dourado text-2xl font-bold text-center uppercase mt-16 mb-5'>My Education</h3>
-      <div className='md:grid md:grid-cols-2 bg-white w-4/5 mx-auto leading-none rounded-xl shadow-lg py-4'>
+      <div className='md:grid md:grid-cols-2 mx-auto leading-none rounded-xl shadow-lg divide-y md:divide-y-0 md:divide-x'>
         {degrees.map((degree, i) => (
           <EducationItem key={'i', i} degree={degree} />
         ))}
