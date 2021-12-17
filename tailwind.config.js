@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ['./src/**/*.js'],
+  content: ['./src/**/*.{html,js}'],
   theme: {
     fontFamily: {
       sans: ['"Titillium Web"']

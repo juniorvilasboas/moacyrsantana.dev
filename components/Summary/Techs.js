@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaPython } from 'react-icons/fa';
 import { SiJavascript, SiHtml5, SiNodedotjs, SiReact, SiCss3 } from 'react-icons/si';
 
 const Techs = () => {
@@ -11,9 +11,10 @@ const Techs = () => {
         <a href='https://www.javascript.com/' target='_blank' className='mb-4'><SiJavascript className='text-3xl hover:text-dourado inline-block' /></a>
         <a href='https://reactjs.org/' target='_blank' className='mb-4'><SiReact className='text-3xl hover:text-dourado inline-block mr-6' /></a>
         <a href='https://nodejs.org/' target='_blank' className='mb-4'><SiNodedotjs className='text-3xl hover:text-dourado inline-block mr-6' /></a>
-        <a href='https://github.com' target='_blank' className='mb-4'><FaGithub className='text-3xl hover:text-dourado inline-block mr-6' /></a>
+        <a href='https://www.python.org/' target='_blank' className='mb-4'><FaPython className='text-3xl hover:text-dourado inline-block mr-6' /></a>
         <a href='#' target='_blank' className='mb-4'><SiHtml5 className='text-3xl hover:text-dourado inline-block mr-6' /></a>
         <a href='#' target='_blank' className='mb-4'><SiCss3 className='text-3xl hover:text-dourado inline-block mr-6' /></a>
+        <a href='https://github.com' target='_blank' className='mb-4'><FaGithub className='text-3xl hover:text-dourado inline-block mr-6' /></a>
       </p>
     </div>
   )
