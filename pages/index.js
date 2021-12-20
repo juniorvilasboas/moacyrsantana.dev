@@ -1,7 +1,6 @@
 import React from 'react'
 import getUser from '../utils/getUser'
 import PageHead from '../components/PageHead'
-import Nav from '../components/Nav'
 import Hero from '../components/Hero'
 import Summary from '../components/Summary'
 import Education from '../components/Education'
@@ -11,13 +10,10 @@ import Footer from '../components/Footer'
 
 const Index = ({ repos, user, month, year }) => {
   return (
-    <div id='home'>
+    <div>
       <PageHead />
       
-      <div className='container mx-auto px-6'>
-        {/**
-        <Nav />
-        */}
+      <div className='container mx-auto px-6 md:px-0'>
         <Hero month={month} />
         <Summary />
         <Education />
