@@ -16,7 +16,7 @@ const Index = ({ repos, user, month, year }) => {
         <Hero month={month} />
         <Summary />
         <Education />
-        <Repos repos={repos} user={user} />
+        
         <Ports />
       </div>
 
