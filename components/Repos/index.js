@@ -11,7 +11,7 @@ const Repos = ({ repos, user }) => {
       <div className='md:grid md:grid-cols-3 mx-auto shadow-lg rounded-xl pb-6'>
         {repos.map(repo => {
           return (
-            <Repo repo={repo} />
+            <Repo key={repo.id} repo={repo} />
           )
         })}
       </div>
