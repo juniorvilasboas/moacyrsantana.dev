@@ -9,7 +9,7 @@ const Footer = ({ year }) => {
           <div className='text-center mb-6 px-2'>
             <p className='text-sm md:text-base'>This website was built during Fullstack Master classes. We used NextJS + SSR (Server Side Rendering) + Vercel (as platform)</p>
             <p className='text-sm md:text-base'>You can find the source-code of this website at:</p>
-            <a className='text-sm md:text-base hover:underline' href='https://github.com/juniorvilasboas/moacyrsantana.dev' target='_blank'>https://github.com/juniorvilasboas/moacyrsantana.dev</a>
+            <a className='text-sm md:text-base hover:underline' href='https://github.com/juniorvilasboas/moacyrsantana.dev' target='_blank' rel="noreferrer">https://github.com/juniorvilasboas/moacyrsantana.dev</a>
           </div>
           <Social />
           {/** <Link /> */}

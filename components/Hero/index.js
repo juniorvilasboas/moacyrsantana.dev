@@ -1,11 +1,11 @@
 import React from 'react'
-import ContactMe from './ContactMe';
+import ContactMe from './ContactMe'
 
 const Hero = ({ month }) => {
   return (
     <div className='md:grid md:grid-cols-2 pt-8 mx-auto leading-none'>
       <div className='sm:pt-10 lg:pt-20 md:px-8'>
-        <h1 className='text-2xl uppercase pl-10 md:pl-14 -mb-2'>Hi! I'm</h1>
+        <h1 className='text-2xl uppercase pl-10 md:pl-14 -mb-2'>Hi! I`m</h1>
         <h1 className='text-dourado text-2xl uppercase font-bold pl-10 md:pl-14 -mb-2 dourado'>Moacyr Santana</h1>
         <h2 className='text-2xl pl-10 md:pl-14'>Software Engineer</h2>
         <ContactMe />
