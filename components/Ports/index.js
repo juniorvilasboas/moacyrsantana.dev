@@ -4,7 +4,7 @@ import PortsItem from './PortsItem'
 const portifolios = [
   {
     layout: '/images/portifolio/moacyrsantana.dev.png',
-    name: 'moacyrsantana.dev',
+    name: 'Moacyr Santana Resumé',
     site: 'https://moacyrsantana.vercel.app/'
   },
   {

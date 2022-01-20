@@ -4,7 +4,7 @@
 
 Este projeto é o código-font do curriculo online de Moacyr Santana, disponível em: https://moacyrsantana.vercel.app/
 
-![Preview](https://github.com/juniorvilasboas/moacyrsantana.dev/blob/main/print.png?raw=true)
+![Preview](https://github.com/juniorvilasboas/moacyrsantana.dev/blob/main/moacyrsantana.dev.png?raw=true)
 
 ## Inicio:
 
@@ -23,14 +23,14 @@ Este projeto pode ser colocado em produção utilizando o [Vercel](https://verce
 
 ## Construido com:
 
-* [NodeJS](https://nodejs.org) - The React Framework
-* [TaildindCSS](https://tailwindcss.com/) - A utility-first CSS framework for rapidly custom designs.
-* [Figma](https://www.figma.com) - Online prototyping tool.
-* [PurgeCSS](https://purgecss.com) - Remove unused CSS.
+- [NodeJS](https://nodejs.org) - The React Framework
+- [TaildindCSS](https://tailwindcss.com/) - A utility-first CSS framework for rapidly custom designs.
+- [Figma](https://www.figma.com) - Online prototyping tool.
+- [PurgeCSS](https://purgecss.com) - Remove unused CSS.
 
 ## Autor
 
-* **Moacyr Santana** - [Linkedin](http://linkedin.com/in/moacyrsantana)
+- **Moacyr Santana** - [Linkedin](http://linkedin.com/in/moacyrsantana)
 
 ## Licença
 
