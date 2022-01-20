@@ -1,6 +1,6 @@
 import React from 'react'
 import SummaryItem from './SummaryItem';
-import Techs from './Techs';
+import Techs from '../Techs/index';
 
 const itens = [
   {
