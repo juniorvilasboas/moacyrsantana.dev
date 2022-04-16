@@ -1,11 +1,8 @@
 module.exports = {
-  content: [
-    './pages/**/*.{html,js}',
-    './components/**/*.{html,js}'
-  ],
+  content: ['./pages/**/*.{html,js}', './components/**/*.{html,js}'],
   theme: {
     fontFamily: {
-      sans: ['"Titillium Web"']
+      sans: ['Titillium Web']
     },
 
     extend: {

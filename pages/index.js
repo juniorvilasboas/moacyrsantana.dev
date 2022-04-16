@@ -1,40 +1,36 @@
 import React from 'react'
-import PageHead from '../components/PageHead'
 import Hero from '../components/Hero'
 import Summary from '../components/Summary'
 import Education from '../components/Education'
 import Repos from '../components/Repos'
 import Ports from '../components/Ports'
-import Footer from '../components/Footer'
 
-const Index = ({ repos, user, month, year }) => {
+const Index = ({ degrees, repos, user, ports, month }) => {
   return (
-    <div>
-      <PageHead />
-      
-      <div className='container mx-auto px-6 md:px-0'>
-        <Hero month={month} />
-        <Summary />
-        <Education />
-        <Repos repos={repos} user={user} />
-        <Ports />
-      </div>
-
-      <Footer year={year} />
-    </div>
+    <>
+      <Hero month={month} />
+      <Summary />
+      <Education degrees={degrees} />
+      <Ports portifolios={ports} />
+    </>
   )
 }
 
 export async function getServerSideProps(context) {
-  const request = await fetch(process.env.API_URL+'/api/getUser')
-  const { repos, user } = await request.json()
+  /*const request = await fetch(process.env.API_URL + '/getUser')
+  const { repos, user } = await request.json()*/
+  const educRequest = await fetch(process.env.API_URL + '/education')
+  const { degrees } = await educRequest.json()
+  const portRequest = await fetch(process.env.API_URL + '/portifolio')
+  const { ports } = await portRequest.json()
 
   return {
     props: {
-      year: new Date().getFullYear(),
       month: new Date().getMonth(),
-      repos,
-      user
+      degrees,
+      /*repos,
+      user*/
+      ports
     }
   }
 }

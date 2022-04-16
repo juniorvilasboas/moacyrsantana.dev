@@ -1,6 +1,6 @@
 import React from 'react'
-import SummaryItem from './SummaryItem';
-import Techs from '../Techs/index';
+import SummaryItem from './SummaryItem'
+import Techs from '../Techs/index'
 
 const itens = [
   {
@@ -18,8 +18,8 @@ const Summary = () => {
       <div className='md:grid md:grid-cols-2 bg-white mx-auto divide-y md:divide-y-0 px-2 md:px-6'>
         <Techs />
         <div className='mt-6 md:mt-2'>
-          {itens.map( (item, i) => (
-            <SummaryItem key={'i', i} item={item} />
+          {itens.map((item, i) => (
+            <SummaryItem key={i} item={item} />
           ))}
         </div>
       </div>

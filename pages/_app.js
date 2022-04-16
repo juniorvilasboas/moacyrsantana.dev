@@ -1,6 +1,7 @@
 import React from 'react'
 import App from 'next/app'
 import '../css/styles.css'
+import Layout from '../components/Layout'
 
 class MyApp extends App {
   render() {
@@ -13,7 +14,10 @@ class MyApp extends App {
             @import url('https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css');
           `}
         </style>
-        <Component {...pageProps} />
+        <script src='/assets/jquery/jquery-3.4.1.min.js'></script>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </React.Fragment>
     )
   }
