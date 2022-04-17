@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import PageHead from '../PageHead'
-import Menu from '../Menu'
+import Menu from '../Menu/Public'
 import Footer from '../Footer'
 
 const Layout = ({ children, year }) => {
@@ -24,7 +24,6 @@ const Layout = ({ children, year }) => {
                   aria-controls='mobile-menu'
                   aria-expanded='false'
                 >
-                  <span className='sr-only'>Open main menu</span>
                   {/*
                     Icon when menu is closed.
 
@@ -78,6 +77,7 @@ const Layout = ({ children, year }) => {
                     {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
                     <Menu.WebLink href={'/'}>Home</Menu.WebLink>
                     <Menu.WebLink href={'/education'}>Education</Menu.WebLink>
+                    <Menu.WebLink href={'/portifolio'}>Portifolio</Menu.WebLink>
                   </div>
                 </div>
               </div>
@@ -88,6 +88,7 @@ const Layout = ({ children, year }) => {
             <Menu.Mobile>
               <Menu.MobileLink href={'/'}>Home</Menu.MobileLink>
               <Menu.MobileLink href={'/education'}>Education</Menu.MobileLink>
+              <Menu.MobileLink href={'/portifolio'}>Portifolio</Menu.MobileLink>
             </Menu.Mobile>
           )}
         </Menu.Nav>

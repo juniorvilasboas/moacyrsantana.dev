@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import Img from '../Img'
+import Img from '../../Img'
 
 const Menu = ({ children }) => {
   return <>{children}</>
