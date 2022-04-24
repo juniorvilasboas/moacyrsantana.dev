@@ -15,11 +15,11 @@ const MenuLogo = () => {
   return (
     <div className='flex-shrink-0 flex items-center'>
       <span className='block lg:hidden w-auto'>
-        <Img src='/apple-icon-180x180.png' alt='Resume' w={40} h={40} />
+        <Img src='/logo_short.png' alt='Resume' w={40} h={40} />
       </span>
       <img
-        className='hidden lg:block h-8 w-auto'
-        src='https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg'
+        className='hidden lg:block h-6 w-auto'
+        src='/Logo_long.png'
         alt='Workflow'
       />
     </div>

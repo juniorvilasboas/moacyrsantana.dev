@@ -8,11 +8,11 @@ const Education = ({ degrees }) => {
       <h3 className=' text-dourado text-2xl font-bold text-center uppercase mt-16 mb-8'>
         My Education
       </h3>
-      <div className='md:grid md:grid-cols-2 mx-auto'>
+      <div className='md:grid lg:grid-cols-2 mx-auto'>
         {degrees.map((degree) => (
-          <div className='flex bg-white dark:bg-gray-800 rounded-lg shadow-xl divide-x md:mr-6 mb-4'>
-            <div className='flex-none w-16 md:w-32 relative'>
-              <div className='py-6 px-2 w-16 md:w-32 text-right text-sm md:text-lg font-bold'>
+          <div className='flex bg-white dark:bg-gray-800 rounded-lg shadow-xl divide-x md:mx-4 lg:mr-6 mb-4'>
+            <div className='flex-none w-24 md:w-32 relative'>
+              <div className='py-6 px-2 w-24 md:w-32 text-right text-sm md:text-lg font-bold'>
                 {format(new Date(degree.begin), 'YYY')}
                 <br />
                 {degree.end
