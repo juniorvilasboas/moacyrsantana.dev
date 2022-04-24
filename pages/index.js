@@ -11,15 +11,14 @@ const Index = ({ month, techs, degrees, repos, user, ports }) => {
       <Hero month={month} />
       <Summary techs={techs} />
       <Education degrees={degrees} />
-      <Repos repos={repos} user={user} />
       <Ports portifolios={ports} />
     </>
   )
 }
 
 export async function getServerSideProps(context) {
-  const request = await fetch(process.env.API_URL + '/repos')
-  const { repos, user } = await request.json()
+  //const request = await fetch(process.env.API_URL + '/repos')
+  //const { repos, user } = await request.json()
   const educRequest = await fetch(process.env.API_URL + '/education')
   const { degrees } = await educRequest.json()
   const portRequest = await fetch(process.env.API_URL + '/portifolio')
@@ -34,8 +33,8 @@ export async function getServerSideProps(context) {
       month: new Date().getMonth(),
       techs: tech,
       degrees,
-      repos,
-      user,
+      //repos,
+      //user,
       ports
     }
   }

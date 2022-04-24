@@ -3,7 +3,7 @@ import Menu from '../Menu/Panel'
 import Link from 'next/link'
 //import { useGet } from 'hooks/api'
 
-const LayoutApp = ({ children }) => {
+const LayoutPanel = ({ children }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const [navOpen, setNavOpen] = useState(false)
   /*const { data } = useGet(
@@ -133,4 +133,4 @@ const LayoutApp = ({ children }) => {
   )
 }
 
-export default LayoutApp
+export default LayoutPanel
