@@ -26,8 +26,6 @@ export async function getServerSideProps(context) {
   const techRequest = await fetch(process.env.API_URL + '/tech')
   const { tech } = await techRequest.json()
 
-  console.log(tech)
-
   return {
     props: {
       month: new Date().getMonth(),

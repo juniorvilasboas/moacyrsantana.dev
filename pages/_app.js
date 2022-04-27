@@ -3,6 +3,7 @@ import '../css/styles.css'
 import LayoutPublic from '../components/Layout/LayoutPublic'
 import LayoutPanel from '../components/Layout/LayoutPanel'
 import { useRouter } from 'next/router'
+import Script from 'next/script'
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   const router = useRouter()
@@ -19,7 +20,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
           @import url('https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css');
         `}
       </style>
-      <script src='/assets/jquery/jquery-3.4.1.min.js'></script>
+      <Script src='/assets/jquery/jquery-3.4.1.min.js'></Script>
       <Layout>
         <Component {...pageProps} />
       </Layout>

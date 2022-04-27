@@ -3,6 +3,7 @@ import techItem from '../components/Techs/TechItem'
 import Link from 'next/link'
 import { format } from 'date-fns'
 import TechItem from '../components/Techs/TechItem'
+import Img from '../components/Img'
 
 const Portifolio = ({ ports }) => {
   return (
@@ -12,13 +13,18 @@ const Portifolio = ({ ports }) => {
       </h3>
       <div className='md:grid lg:grid-cols-2 mx-auto'>
         {ports.map((port) => (
-          <div className='flex bg-white dark:bg-gray-800 rounded-lg shadow-xl divide-x md:mx-4 lg:mr-6 mb-4'>
+          <div
+            key={port.id}
+            className='flex bg-white dark:bg-gray-800 rounded-lg shadow-xl divide-x md:mx-4 lg:mr-6 mb-4'
+          >
             <div className='flex-none w-24 md:w-48 relative'>
               <div className='py-6 px-2 w-24 md:w-48 text-right text-sm md:text-lg font-bold'>
-                <img
+                <Img
                   src={port.layout}
                   alt='shopping image'
-                  className='absolute rounded-lg inset-0 w-full object-cover my-auto'
+                  h={150}
+                  w={150}
+                  css='absolute rounded-lg inset-0 w-full object-cover my-auto'
                 />
               </div>
             </div>
@@ -64,7 +70,6 @@ const Portifolio = ({ ports }) => {
 export async function getServerSideProps(context) {
   const portRequest = await fetch(process.env.API_URL + '/portifolio')
   const { ports } = await portRequest.json()
-  console.log(ports)
   return {
     props: {
       ports
