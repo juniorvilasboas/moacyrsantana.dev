@@ -1,8 +1,8 @@
 import React from 'react'
 
 interface Props {
-  children: React.ReactNode
-  showIcon: boolean
+  children: string
+  showIcon?: boolean
 }
 
 const Alert = ({ children, showIcon = true }: Props) => {
