@@ -5,7 +5,7 @@ import Img from 'components/Img'
 import { useGet } from 'hooks/api'
 
 const Portifolio = () => {
-  const { data: portifolios } = useGet('http://localhost:3001/portifolio')
+  const { data: portifolios } = useGet(`${process.env.API_URL}/portifolio`)
   return (
     <div>
       <h3 className=' text-dourado text-2xl font-bold text-center uppercase mt-16 mb-8'>

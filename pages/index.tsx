@@ -19,14 +19,14 @@ const Home: NextPage = ({ repos, user }: any) => {
 
 //@ts-ignore
 export async function getServerSideProps(context) {
-  /*const { repos, user } = await (
+  const { repos, user } = await (
     await fetch(`${process.env.API_LOCAL}/api/reposition`)
-  ).json()*/
+  ).json()
 
   return {
     props: {
-      //repos,
-      //user
+      repos,
+      user
     }
   }
 }

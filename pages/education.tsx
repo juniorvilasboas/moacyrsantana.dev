@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 
 const Education = () => {
-  const { data: degrees } = useGet('http://localhost:3001/education')
+  const { data: degrees } = useGet(`${process.env.API_URL}/education`)
   return (
     <div>
       <h3 className=' text-dourado text-2xl font-bold text-center uppercase mt-16 mb-8'>
