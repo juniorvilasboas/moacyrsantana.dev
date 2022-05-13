@@ -3,7 +3,10 @@ import React from 'react'
 import PortsItem from './PortsItem'
 
 const Ports = () => {
-  const { data: portifolios } = useGet(`${process.env.API_URL}/portifolio`)
+  //const { data: portifolios } = useGet(`${process.env.API_URL}/portifolio`)
+  const { data: portifolios } = useGet(
+    `https://moacyrsantana-dev-api.vercel.app/portifolio`
+  )
   if (portifolios) {
     return (
       <div>
