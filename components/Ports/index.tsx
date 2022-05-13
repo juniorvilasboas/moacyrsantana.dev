@@ -3,7 +3,9 @@ import React from 'react'
 import PortsItem from './PortsItem'
 
 const Ports = () => {
-  const { data: portifolios } = useGet('http://localhost:3001/portifolio')
+  const { data: portifolios } = useGet(
+    'https://moacyrsantana-dev-arsg9zu95-moacyr.vercel.app/portifolio'
+  )
   if (portifolios) {
     return (
       <div>
