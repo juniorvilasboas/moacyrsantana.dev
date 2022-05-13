@@ -3,9 +3,7 @@ import React from 'react'
 import EducationItem from './EducationItem'
 
 const Education = () => {
-  const { data: education } = useGet(
-    'https://moacyrsantana-dev-arsg9zu95-moacyr.vercel.app/education'
-  )
+  const { data: education } = useGet(`${process.env.API_URL}/education'`)
   if (education) {
     return (
       <div>
