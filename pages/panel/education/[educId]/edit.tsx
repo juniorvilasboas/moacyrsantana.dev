@@ -40,7 +40,7 @@ const EditDegree = () => {
 
   const { data } = useGet(
     router?.query?.educId &&
-      `http://localhost:3001/education/${router?.query?.educId}`
+      `https://moacyrsantana-dev-api.vercel.app/education/${router?.query?.educId}`
   )
 
   useEffect(() => {
@@ -58,7 +58,7 @@ const EditDegree = () => {
     inputs.begin = new Date(inputs.begin)
     inputs.end = new Date(inputs.end)
     const data = await patch({
-      url: `http://localhost:3001/education/${router?.query?.educId}`,
+      url: `https://moacyrsantana-dev-api.vercel.app/education/${router?.query?.educId}`,
       data: inputs
     })
     router.push(`/panel/education`)

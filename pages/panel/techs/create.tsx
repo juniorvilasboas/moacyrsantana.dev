@@ -34,7 +34,7 @@ const CreateTech = () => {
 
   const onSubmit: SubmitHandler<NewTechForm> = async (inputs) => {
     const data = await post({
-      url: `http://localhost:3001/tech`,
+      url: `https://moacyrsantana-dev-api.vercel.app/tech`,
       data: inputs
     })
     router.push(`/panel/tech`)

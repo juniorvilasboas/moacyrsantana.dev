@@ -40,7 +40,7 @@ const CreateDegree = () => {
     inputs.begin = new Date(inputs.begin)
     inputs.end = new Date(inputs.end)
     const data = await post({
-      url: `http://localhost:3001/education`,
+      url: `https://moacyrsantana-dev-api.vercel.app/education`,
       data: inputs
     })
     router.push(`/panel/education`)

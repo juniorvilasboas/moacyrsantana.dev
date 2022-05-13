@@ -5,10 +5,12 @@ import Alert from 'components/Alert'
 import { useGet } from 'hooks/api'
 
 const Index = () => {
-  const { data: degrees, mutate } = useGet('http://localhost:3001/education')
+  const { data: degrees, mutate } = useGet(
+    'https://moacyrsantana-dev-api.vercel.app/education'
+  )
   const onDelete = async (id: string) => {
     await remove({
-      url: `http://localhost:3001/education/${id}`
+      url: `https://moacyrsantana-dev-api.vercel.app/education/${id}`
     })
     await mutate()
   }

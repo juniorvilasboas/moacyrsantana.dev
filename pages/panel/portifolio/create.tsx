@@ -37,7 +37,7 @@ const CreatePortifolio = () => {
 
   const onSubmit: SubmitHandler<NewPortifolioForm> = async (inputs) => {
     const data = await post({
-      url: `http://localhost:3001/portifolio`,
+      url: `https://moacyrsantana-dev-api.vercel.app/portifolio`,
       data: inputs
     })
     router.push(`/panel/portifolio`)

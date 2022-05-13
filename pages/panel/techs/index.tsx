@@ -6,10 +6,12 @@ import { useGet } from 'hooks/api'
 import TechItem from 'components/Techs/TechItem'
 
 const Index = () => {
-  const { data: techs, mutate } = useGet('http://localhost:3001/tech')
+  const { data: techs, mutate } = useGet(
+    'https://moacyrsantana-dev-api.vercel.app/tech'
+  )
   const onDelete = async (id: string) => {
     await remove({
-      url: `http://localhost:3001/tech/${id}`
+      url: `https://moacyrsantana-dev-api.vercel.app/tech/${id}`
     })
     await mutate()
   }

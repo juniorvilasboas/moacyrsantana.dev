@@ -6,11 +6,11 @@ import { useGet } from 'hooks/api'
 
 const Index = () => {
   const { data: portifolios, mutate } = useGet(
-    'http://localhost:3001/portifolio'
+    'https://moacyrsantana-dev-api.vercel.app/portifolio'
   )
   const onDelete = async (id: string) => {
     await remove({
-      url: `http://localhost:3001/portifolio/${id}`
+      url: `https://moacyrsantana-dev-api.vercel.app/portifolio/${id}`
     })
     await mutate()
   }
