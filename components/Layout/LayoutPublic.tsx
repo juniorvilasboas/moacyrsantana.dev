@@ -81,6 +81,7 @@ const Layout = ({ children }: Props) => {
                     {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
                     <Menu.WebLink href={'/'}>Home</Menu.WebLink>
                     <Menu.WebLink href={'/education'}>Education</Menu.WebLink>
+                    <Menu.WebLink href={'/experience'}>Experience</Menu.WebLink>
                     <Menu.WebLink href={'/portifolio'}>Portifolio</Menu.WebLink>
                   </div>
                 </div>
@@ -92,6 +93,7 @@ const Layout = ({ children }: Props) => {
             <Menu.Mobile>
               <Menu.MobileLink href={'/'}>Home</Menu.MobileLink>
               <Menu.MobileLink href={'/education'}>Education</Menu.MobileLink>
+              <Menu.MobileLink href={'/experience'}>Experience</Menu.MobileLink>
               <Menu.MobileLink href={'/portifolio'}>Portifolio</Menu.MobileLink>
             </Menu.Mobile>
           )}

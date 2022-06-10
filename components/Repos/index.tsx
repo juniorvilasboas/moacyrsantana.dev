@@ -1,9 +1,12 @@
 import React from 'react'
-
+import { useGet } from 'hooks/api'
 import UserStats from './UserStats'
 import Repo from './Repo'
 
-const Repos = ({ repos, user }: any) => {
+const Repos = () => {
+  const {
+    data: { repos, user }
+  } = useGet('/api/reposition')
   return (
     <div>
       <h3 className='text-dourado text-2xl font-bold text-center uppercase mt-16'>

@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { IconType } from 'react-icons'
 
 interface Props {
   children: React.ReactNode
@@ -25,9 +26,9 @@ const MenuNav = ({ children }: Props) => {
 interface PropsLink {
   children: React.ReactNode
   href: string
-  icon: string
+  Icon: IconType
 }
-const MenuLink = ({ children, href, icon }: PropsLink) => {
+const MenuLink = ({ children, href, Icon }: PropsLink) => {
   const router = useRouter()
   const { pathname } = router
   let teste1 = pathname.split('/').slice(2)[0]
@@ -35,6 +36,7 @@ const MenuLink = ({ children, href, icon }: PropsLink) => {
     teste1 = 'panel'
   }
   const teste = href.split('/').slice(-1)[0]
+  // https://react-icons.github.io/react-icons
   const selected = teste1 === teste || pathname.startsWith(teste1)
   return (
     <Link href={href}>
@@ -45,14 +47,7 @@ const MenuLink = ({ children, href, icon }: PropsLink) => {
             : 'w-full text-gray-400 flex items-center pl-6 p-2 my-2 transition-colors duration-200 justify-start hover:bg-gray-900 hover:text-gray-100 border-l-4 border-transparent'
         }
       >
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          className='h-5 w-5'
-          viewBox='0 0 20 20'
-          fill='currentColor'
-        >
-          <path fillRule='evenodd' clipRule='evenodd' d={icon} />
-        </svg>
+        {Icon && <Icon />}
         <span className='mx-2 text-sm font-normal'>{children}</span>
       </a>
     </Link>

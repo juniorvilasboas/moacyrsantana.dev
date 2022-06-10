@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TechItem = ({ item, css }: any) => {
+const SkilItem = ({ item, css }: any) => {
   return (
     <a href={item.link} target='_blank' rel='noreferrer' className='mb-4'>
       <img
@@ -11,4 +11,4 @@ const TechItem = ({ item, css }: any) => {
   )
 }
 
-export default TechItem
+export default SkilItem

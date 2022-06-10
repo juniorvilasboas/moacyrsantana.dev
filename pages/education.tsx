@@ -4,11 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 
 const Education = () => {
-  //const { data: degrees } = useGet(`${process.env.API_URL}/education`)
-  const { data: degrees } = useGet(
-    `https://moacyrsantana-dev-api.vercel.app/education`
-  )
-  //const { data: degrees } = useGet(`http://localhost:3001/education`)
+  const { data: degrees } = useGet('/api/education')
   return (
     <div>
       <h3 className=' text-dourado text-2xl font-bold text-center uppercase mt-16 mb-8'>
@@ -45,11 +41,16 @@ const Education = () => {
                   </p>
                 </div>
                 <div className='flex'>
-                  <Link href={degree.site}>
-                    <a className='text-dourado hover:underline' target='_blank'>
-                      Web Site
-                    </a>
-                  </Link>
+                  {degree.site && (
+                    <Link href={'https://' + degree.site}>
+                      <a
+                        className='text-dourado hover:underline'
+                        target='_blank'
+                      >
+                        Web Site
+                      </a>
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>

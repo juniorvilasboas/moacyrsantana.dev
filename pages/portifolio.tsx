@@ -1,15 +1,11 @@
 import React from 'react'
 import Link from 'next/link'
-import TechItem from 'components/Techs/TechItem'
+import SkilItem from 'components/Skills/SkilItem'
 import Img from 'components/Img'
 import { useGet } from 'hooks/api'
 
 const Portifolio = () => {
-  //const { data: portifolios } = useGet(`${process.env.API_URL}/portifolio`)
-  const { data: portifolios } = useGet(
-    `https://moacyrsantana-dev-api.vercel.app/portifolio`
-  )
-  //const { data: portifolios } = useGet(`http://localhost:3001/portifolio`)
+  const { data: portifolios } = useGet('/api/portifolio')
   return (
     <div>
       <h3 className=' text-dourado text-2xl font-bold text-center uppercase mt-16 mb-8'>
@@ -40,13 +36,13 @@ const Portifolio = () => {
                   </h1>
                 </div>
                 <span className='block'>
-                  Site desenvolvido com as tecnologias:
+                  Website developed with technologies:
                 </span>
                 <div className='flex items-baseline mt-2 mb-2 text-gray-700 dark:text-gray-300'>
                   <>
                     <p className='mb-2'>
-                      {portifolio.techs.map((tech: any) => (
-                        <TechItem
+                      {portifolio.skills.map((tech: any) => (
+                        <SkilItem
                           key={tech.id}
                           item={tech}
                           css='h-6 md:h-8 inline-block mr-4'

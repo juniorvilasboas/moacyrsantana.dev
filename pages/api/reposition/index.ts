@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import getUser from '../../../utils/getUser'
+import reposition from 'services/reposition'
 
 const apiGetUser = async (req: NextApiRequest, res: NextApiResponse) => {
-  const data = await getUser('juniorvilasboas')
+  const data = await reposition('juniorvilasboas')
   res.send(data)
 }
 

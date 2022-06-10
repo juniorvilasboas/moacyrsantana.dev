@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
 import Menu from '../Menu/Panel'
 import Link from 'next/link'
+import Img from 'components/Img'
+import { AiFillHome, AiOutlineFundProjectionScreen } from 'react-icons/ai'
+import { MdCastForEducation } from 'react-icons/md'
+import { SiExpertsexchange } from 'react-icons/si'
+import { GiSkills } from 'react-icons/gi'
 //import { useGet } from 'hooks/api'
 
 interface Props {
@@ -30,36 +35,22 @@ const LayoutPanel = ({ children }: Props) => {
                   <Link href={'/'}>Curriculo Online</Link>
                 </Menu.Brand>
                 <Menu.Nav>
-                  <Menu.Link
-                    href={'/panel'}
-                    icon={
-                      'M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z'
-                    }
-                  >
+                  <Menu.Link href={'/panel'} Icon={AiFillHome}>
                     Home
                   </Menu.Link>
-                  <Menu.Link
-                    href='/panel/education'
-                    icon={
-                      'M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z'
-                    }
-                  >
+                  <Menu.Link href='/panel/education' Icon={MdCastForEducation}>
                     Educação
+                  </Menu.Link>
+                  <Menu.Link href='/panel/experience' Icon={SiExpertsexchange}>
+                    Experiência
                   </Menu.Link>
                   <Menu.Link
                     href={`/panel/portifolio`}
-                    icon={
-                      'M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z'
-                    }
+                    Icon={AiOutlineFundProjectionScreen}
                   >
                     Portifolio
                   </Menu.Link>
-                  <Menu.Link
-                    href={`/panel/techs`}
-                    icon={
-                      'M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z'
-                    }
-                  >
+                  <Menu.Link href={`/panel/skil`} Icon={GiSkills}>
                     Tecnologias
                   </Menu.Link>
                 </Menu.Nav>
@@ -92,11 +83,15 @@ const LayoutPanel = ({ children }: Props) => {
                       onClick={() => setDropdownOpen(!dropdownOpen)}
                       className='cursor-pointer relative z-10 block h-8 w-8 rounded-full overflow-hidden shadow focus:outline-none'
                     >
-                      <img
-                        src='images/foto.png'
-                        alt='Moacyr Santana'
-                        className='object-cover h-8 w-8'
-                      />
+                      <div className='h-8 w-8'>
+                        <Img
+                          src={`${process.env.API_LOCAL}/images/foto.png`}
+                          alt='Moacyr Santana'
+                          h={30}
+                          w={30}
+                          fit={'contain'}
+                        />
+                      </div>
                     </button>
 
                     <div

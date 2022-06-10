@@ -14,7 +14,7 @@ const EducationItem = ({ degree }: any) => {
         </span>
       </p>
       {degree.site && (
-        <Link href={degree.site}>
+        <Link href={'https://' + degree.site}>
           <a
             className='text-dourado hover:underline'
             target='_blank'

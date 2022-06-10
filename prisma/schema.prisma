@@ -1,0 +1,79 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Level {
+  id          String  @id @default(cuid())
+  item        Int     @default(autoincrement())
+  nivel       String  @db.VarChar(255)
+  name        String  @db.VarChar(255)
+  description String? @db.VarChar(255)
+  skil        Skil[]
+}
+
+model Language {
+  id            String @id @default(cuid())
+  item          Int    @default(autoincrement())
+  name          String @db.VarChar(255)
+  understanding String @db.VarChar(255)
+  speaking      String @db.VarChar(255)
+  writing       String @db.VarChar(255)
+}
+
+model Education {
+  id          String  @id @default(cuid())
+  degree      String  @db.VarChar(255)
+  subject     String  @db.VarChar(255)
+  institution String  @db.VarChar(255)
+  site        String? @db.VarChar(255)
+  begin       String
+  end         String?
+}
+
+model Experience {
+  id          String  @id @default(cuid())
+  role        String  @db.VarChar(255)
+  type        String  @db.VarChar(255)
+  company     String  @db.VarChar(255)
+  city        String  @db.VarChar(255)
+  country     String  @db.VarChar(255)
+  description String  @db.VarChar(255)
+  begin       String
+  end         String?
+}
+
+model Information {
+  id      String @id @default(cuid())
+  phone   String @db.VarChar(255)
+  address String @db.VarChar(255)
+  city    String @db.VarChar(255)
+  country String @db.VarChar(255)
+  cep     String @db.VarChar(255)
+}
+
+model Portifolio {
+  id          String  @id @default(cuid())
+  layout      String  @db.VarChar(255)
+  name        String  @db.VarChar(255)
+  site        String? @db.VarChar(255)
+  category    String  @db.VarChar(255)
+  subject     String  @db.VarChar(255)
+  description String  @db.VarChar(255)
+  skills      Skil[]
+}
+
+model Skil {
+  id         String       @id @default(cuid())
+  name       String       @db.VarChar(255)
+  site       String?      @db.VarChar(255)
+  ext        String       @db.VarChar(255)
+  tipo       String       @db.VarChar(255)
+  level      Level?       @relation(fields: [levelId], references: [id])
+  levelId    String?
+  Portifolio Portifolio[]
+}
