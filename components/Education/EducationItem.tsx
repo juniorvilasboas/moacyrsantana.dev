@@ -1,4 +1,3 @@
-import React, { ReactElement } from 'react'
 import Link from 'next/link'
 
 const EducationItem = ({ degree }: any) => {
@@ -14,14 +13,13 @@ const EducationItem = ({ degree }: any) => {
         </span>
       </p>
       {degree.site && (
-        <Link href={'https://' + degree.site}>
-          <a
-            className='text-dourado hover:underline'
-            target='_blank'
-            rel='noreferrer'
-          >
-            Web Site
-          </a>
+        <Link
+          href={'https://' + degree.site}
+          className='text-dourado hover:underline'
+          target='_blank'
+          rel='noreferrer'
+        >
+          Web Site
         </Link>
       )}
     </div>

@@ -1,6 +1,5 @@
 import { useGet } from 'hooks/api'
 import Link from 'next/link'
-import React from 'react'
 import EducationItem from './EducationItem'
 
 const Education = () => {

@@ -1,6 +1,4 @@
 import { useGet } from 'hooks/api'
-import Link from 'next/link'
-import React from 'react'
 
 const Language = () => {
   const { data: languages } = useGet('/api/language')

@@ -1,17 +1,16 @@
-import React from 'react'
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
 import LayoutPublic from 'components/Layout/LayoutPublic'
-import LayoutPanel from 'components/Layout/LayoutPanel'
+import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import Script from 'next/script'
+import React from 'react'
+import '../styles/globals.css'
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const router = useRouter()
   const { pathname } = router
   let Layout = LayoutPublic
   if (pathname.indexOf('/panel') === 0) {
-    Layout = LayoutPanel
+    return <Component {...pageProps} />
   }
 
   return (
@@ -23,6 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         `}
       </style>
       <Script src='/assets/jquery/jquery-3.4.1.min.js'></Script>
+      <Script src='./TW-ELEMENTS-PATH/dist/js/index.min.js'></Script>
       <Layout>
         <Component {...pageProps} />
       </Layout>

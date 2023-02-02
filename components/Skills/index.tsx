@@ -1,5 +1,4 @@
 import { useGet } from 'hooks/api'
-import React from 'react'
 import SkilItem from './SkilItem'
 
 const Skills = () => {
@@ -16,7 +15,7 @@ const Skills = () => {
         <div className='grid grid-cols-5 my-8'>
           {skills &&
             skills
-              .filter((skil: any) => skil.tipo === 'front')
+              .filter((skil: any) => skil.tipo === 'Front-end')
               .map((skil: any) => (
                 <SkilItem
                   key={skil.id}
@@ -31,7 +30,7 @@ const Skills = () => {
         <div className='grid grid-cols-5 my-8'>
           {skills &&
             skills
-              .filter((skil: any) => skil.tipo === 'back')
+              .filter((skil: any) => skil.tipo === 'Back-end')
               .map((skil: any) => (
                 <SkilItem
                   key={skil.id}
@@ -46,7 +45,7 @@ const Skills = () => {
         <div className='grid grid-cols-5 my-8'>
           {skills &&
             skills
-              .filter((skil: any) => skil.tipo === 'banco')
+              .filter((skil: any) => skil.tipo === 'Database')
               .map((skil: any) => (
                 <SkilItem
                   key={skil.id}

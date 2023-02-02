@@ -15,8 +15,10 @@ const Level = async (
   const levelId = String(req.query.levelId)
   if (req.method === 'PATCH') {
     const levelData: Prisma.LevelUpdateInput = { ...req.body }
+    console.log('Data: ', levelData)
 
     const levelItem = await getLevelById(levelId)
+    console.log('Item: ', levelItem)
 
     if (levelItem) {
       const savedLevel = await update(levelId, levelData)

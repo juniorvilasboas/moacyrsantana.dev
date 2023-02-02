@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { FiUsers } from 'react-icons/fi'
 import { GoGist, GoRepo } from 'react-icons/go'
 

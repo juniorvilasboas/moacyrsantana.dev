@@ -7,11 +7,55 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  accounts      Account[]
+  sessions      Session[]
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
 model Level {
   id          String  @id @default(cuid())
   item        Int     @default(autoincrement())
-  nivel       String  @db.VarChar(255)
-  name        String  @db.VarChar(255)
+  value       String  @db.VarChar(255)
+  label       String  @db.VarChar(255)
   description String? @db.VarChar(255)
   skil        Skil[]
 }
@@ -26,25 +70,25 @@ model Language {
 }
 
 model Education {
-  id          String  @id @default(cuid())
-  degree      String  @db.VarChar(255)
-  subject     String  @db.VarChar(255)
-  institution String  @db.VarChar(255)
-  site        String? @db.VarChar(255)
-  begin       String
-  end         String?
+  id          String    @id @default(cuid())
+  degree      String    @db.VarChar(255)
+  subject     String    @db.VarChar(255)
+  institution String    @db.VarChar(255)
+  site        String?   @db.VarChar(255)
+  begin       DateTime
+  end         DateTime?
 }
 
 model Experience {
-  id          String  @id @default(cuid())
-  role        String  @db.VarChar(255)
-  type        String  @db.VarChar(255)
-  company     String  @db.VarChar(255)
-  city        String  @db.VarChar(255)
-  country     String  @db.VarChar(255)
-  description String  @db.VarChar(255)
-  begin       String
-  end         String?
+  id          String    @id @default(cuid())
+  role        String    @db.VarChar(255)
+  type        String    @db.VarChar(255)
+  company     String    @db.VarChar(255)
+  city        String    @db.VarChar(255)
+  country     String    @db.VarChar(255)
+  description String    @db.VarChar(255)
+  begin       DateTime
+  end         DateTime?
 }
 
 model Information {
@@ -64,7 +108,7 @@ model Portifolio {
   category    String  @db.VarChar(255)
   subject     String  @db.VarChar(255)
   description String  @db.VarChar(255)
-  skills      Skil[]
+  skills      Skil[]  @relation("PortifolioToSkil")
 }
 
 model Skil {
@@ -73,7 +117,7 @@ model Skil {
   site       String?      @db.VarChar(255)
   ext        String       @db.VarChar(255)
   tipo       String       @db.VarChar(255)
-  level      Level?       @relation(fields: [levelId], references: [id])
   levelId    String?
-  Portifolio Portifolio[]
+  level      Level?       @relation(fields: [levelId], references: [id])
+  Portifolio Portifolio[] @relation("PortifolioToSkil")
 }

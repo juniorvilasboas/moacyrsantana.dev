@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import PageHead from '../PageHead'
-import Menu from '../Menu/Public'
 import Footer from '../Footer'
+import Menu from '../Menu/Public'
+import PageHead from '../PageHead'
 
 interface Props {
   children: React.ReactNode

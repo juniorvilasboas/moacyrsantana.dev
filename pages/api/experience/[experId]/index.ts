@@ -40,7 +40,7 @@ const Experience = async (
   const experience = await getExperienceById(experId)
 
   //@ts-ignore
-  return res.send({ experience })
+  return res.send(experience)
 }
 
 export default Experience

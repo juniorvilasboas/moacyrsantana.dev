@@ -24,6 +24,10 @@ export const getEducationById = async (id: string) => {
 export const create = async (
   educationData: Prisma.EducationCreateInput
 ): Promise<Education | null> => {
+  educationData.begin = new Date(educationData.begin)
+  if (educationData.end) {
+    educationData.end = new Date(educationData.end)
+  }
   const savedEducation = await prisma.education.create({ data: educationData })
 
   if (savedEducation) {

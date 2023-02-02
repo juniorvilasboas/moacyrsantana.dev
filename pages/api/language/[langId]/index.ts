@@ -40,7 +40,7 @@ const Language = async (
   const language = await getLanguageById(langId)
 
   //@ts-ignore
-  return res.send({ language })
+  return res.send(language)
 }
 
 export default Language

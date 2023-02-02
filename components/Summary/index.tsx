@@ -1,7 +1,6 @@
-import React from 'react'
-import SummaryItem from './SummaryItem'
-import Techs from '../Skills/index'
 import Language from 'components/Language'
+import Techs from '../Skills/index'
+import SummaryItem from './SummaryItem'
 
 const itens = [
   {

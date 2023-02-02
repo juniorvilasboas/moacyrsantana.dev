@@ -1,7 +1,6 @@
-import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import Img from '../../Img'
+import React from 'react'
 
 interface Props {
   children: React.ReactNode
@@ -50,16 +49,15 @@ const MenuWebLink = ({ children, href }: PropsLink) => {
   const { pathname } = router
   const selected = pathname === href
   return (
-    <Link href={href}>
-      <a
-        className={
-          selected
-            ? 'bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium'
-            : 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
-        }
-      >
-        {children}
-      </a>
+    <Link
+      href={href}
+      className={
+        selected
+          ? 'bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium'
+          : 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+      }
+    >
+      {children}
     </Link>
   )
 }
@@ -77,16 +75,15 @@ const MenuMobileLink = ({ children, href }: PropsLink) => {
   const { pathname } = router
   const selected = pathname === href
   return (
-    <Link href={href}>
-      <a
-        className={
-          selected
-            ? 'bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium'
-            : 'text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
-        }
-      >
-        {children}
-      </a>
+    <Link
+      href={href}
+      className={
+        selected
+          ? 'bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium'
+          : 'text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+      }
+    >
+      {children}
     </Link>
   )
 }

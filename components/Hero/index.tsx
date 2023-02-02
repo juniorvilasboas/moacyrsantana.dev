@@ -1,6 +1,5 @@
-import React from 'react'
-import ContactMe from './ContactMe'
 import Img from '../Img'
+import ContactMe from './ContactMe'
 
 const Hero = () => {
   const month = new Date().getMonth()
@@ -31,7 +30,7 @@ const Hero = () => {
             <Img src='/images/javascript.png' h={60} w={60} />
           </div>
         </div>
-        <div className='absolute h-64 lg:h-80 md:h-40 ml-12 sm:ml-16 md:ml-0 lg:ml-20 z-0'>
+        <div className='absolute h-64 lg:h-80 md:h-40 ml-12 sm:ml-16 md:ml-0 lg:ml-20 -z-10'>
           <Img src='/images/back-network.png' h={400} w={400} />
         </div>
         <img

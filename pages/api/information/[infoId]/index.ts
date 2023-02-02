@@ -40,7 +40,7 @@ const Information = async (
   const informations = await getInformationById(infoId)
 
   //@ts-ignore
-  return res.send({ informations })
+  return res.send(informations)
 }
 
 export default Information

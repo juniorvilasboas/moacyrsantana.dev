@@ -1,7 +1,6 @@
-import React from 'react'
 import { useGet } from 'hooks/api'
-import UserStats from './UserStats'
 import Repo from './Repo'
+import UserStats from './UserStats'
 
 const Repos = () => {
   const { data } = useGet('/api/reposition')

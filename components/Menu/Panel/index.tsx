@@ -1,6 +1,6 @@
-import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import React from 'react'
 import { IconType } from 'react-icons'
 
 interface Props {
@@ -39,17 +39,16 @@ const MenuLink = ({ children, href, Icon }: PropsLink) => {
   // https://react-icons.github.io/react-icons
   const selected = teste1 === teste || pathname.startsWith(teste1)
   return (
-    <Link href={href}>
-      <a
-        className={
-          selected
-            ? 'w-full bg-gray-900 text-gray-100 dark:text-white flex items-center pl-6 p-2 my-2 transition-colors duration-200 justify-start border-l-4 border-purple-500'
-            : 'w-full text-gray-400 flex items-center pl-6 p-2 my-2 transition-colors duration-200 justify-start hover:bg-gray-900 hover:text-gray-100 border-l-4 border-transparent'
-        }
-      >
-        {Icon && <Icon />}
-        <span className='mx-2 text-sm font-normal'>{children}</span>
-      </a>
+    <Link
+      href={href}
+      className={
+        selected
+          ? 'w-full bg-gray-900 text-gray-100 dark:text-white flex items-center pl-6 p-2 my-2 transition-colors duration-200 justify-start border-l-4 border-purple-500'
+          : 'w-full text-gray-400 flex items-center pl-6 p-2 my-2 transition-colors duration-200 justify-start hover:bg-gray-900 hover:text-gray-100 border-l-4 border-transparent'
+      }
+    >
+      {Icon && <Icon />}
+      <span className='mx-2 text-sm font-normal'>{children}</span>
     </Link>
   )
 }

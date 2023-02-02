@@ -1,11 +1,13 @@
+import { signOut, useSession } from 'next-auth/react'
+import Link from 'next/link'
 import React, { useState } from 'react'
 import Menu from '../Menu/Panel'
-import Link from 'next/link'
-import Img from 'components/Img'
+
 import { AiFillHome, AiOutlineFundProjectionScreen } from 'react-icons/ai'
-import { MdCastForEducation } from 'react-icons/md'
-import { SiExpertsexchange } from 'react-icons/si'
+import { BsFillPersonLinesFill } from 'react-icons/bs'
 import { GiSkills } from 'react-icons/gi'
+import { MdCastForEducation, MdLanguage } from 'react-icons/md'
+import { SiExpertsexchange } from 'react-icons/si'
 //import { useGet } from 'hooks/api'
 
 interface Props {
@@ -13,8 +15,10 @@ interface Props {
 }
 
 const LayoutPanel = ({ children }: Props) => {
+  const { data: session } = useSession()
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const [navOpen, setNavOpen] = useState(false)
+
   /*const { data } = useGet(
     router?.query?.tenantId ? `/api/tenants/${router?.query?.tenantId}` : null
   )*/
@@ -37,6 +41,15 @@ const LayoutPanel = ({ children }: Props) => {
                 <Menu.Nav>
                   <Menu.Link href={'/panel'} Icon={AiFillHome}>
                     Home
+                  </Menu.Link>
+                  <Menu.Link
+                    href='/panel/information'
+                    Icon={BsFillPersonLinesFill}
+                  >
+                    Informação
+                  </Menu.Link>
+                  <Menu.Link href='/panel/language' Icon={MdLanguage}>
+                    Idiomas
                   </Menu.Link>
                   <Menu.Link href='/panel/education' Icon={MdCastForEducation}>
                     Educação
@@ -83,13 +96,11 @@ const LayoutPanel = ({ children }: Props) => {
                       onClick={() => setDropdownOpen(!dropdownOpen)}
                       className='cursor-pointer relative z-10 block h-8 w-8 rounded-full overflow-hidden shadow focus:outline-none'
                     >
-                      <div className='h-8 w-8'>
-                        <Img
-                          src={`${process.env.API_LOCAL}/images/foto.png`}
-                          alt='Moacyr Santana'
-                          h={30}
-                          w={30}
-                          fit={'contain'}
+                      <div>
+                        <img
+                          className='h-8 w-8'
+                          src={session?.user?.image}
+                          alt={session?.user?.name}
                         />
                       </div>
                     </button>
@@ -111,9 +122,16 @@ const LayoutPanel = ({ children }: Props) => {
                           }
                         >
                           <div className='w-full text-center pb-2 border-b-2'>
-                            Moacyr Santana
+                            {session?.user?.name}
                           </div>
-                          <a className='cursor-pointer block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white'>
+                          <a
+                            className='cursor-pointer block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white'
+                            onClick={() =>
+                              signOut({
+                                callbackUrl: '/'
+                              })
+                            }
+                          >
                             Logout
                           </a>
                         </div>

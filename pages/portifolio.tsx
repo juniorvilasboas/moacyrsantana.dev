@@ -1,8 +1,7 @@
-import React from 'react'
-import Link from 'next/link'
-import SkilItem from 'components/Skills/SkilItem'
 import Img from 'components/Img'
+import SkilItem from 'components/Skills/SkilItem'
 import { useGet } from 'hooks/api'
+import Link from 'next/link'
 
 const Portifolio = () => {
   const { data: portifolios } = useGet('/api/portifolio')
@@ -16,7 +15,7 @@ const Portifolio = () => {
           portifolios.map((portifolio: any) => (
             <div
               key={portifolio.id}
-              className='flex bg-white dark:bg-gray-800 rounded-lg shadow-xl divide-x md:mx-4 lg:mr-6 mb-4'
+              className='flex bg-white dark:bg-gray-600 rounded-lg shadow-xl divide-x md:mx-4 lg:mr-6 mb-4'
             >
               <div className='flex-none w-24 md:w-48 relative'>
                 <div className='py-6 px-2 w-24 md:w-48 text-right text-sm md:text-lg font-bold'>
@@ -56,10 +55,12 @@ const Portifolio = () => {
                   {portifolio.subject}
                 </div>
                 <div className='flex'>
-                  <Link href={portifolio.site}>
-                    <a className='text-dourado hover:underline' target='_blank'>
-                      Web Site
-                    </a>
+                  <Link
+                    href={portifolio.site}
+                    className='text-dourado hover:underline'
+                    target='_blank'
+                  >
+                    Web Site
                   </Link>
                 </div>
               </div>

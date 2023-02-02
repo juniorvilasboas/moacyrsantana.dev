@@ -1,4 +1,3 @@
-import React from 'react'
 import Social from './Social'
 
 const Footer = () => {
@@ -25,7 +24,7 @@ const Footer = () => {
         </div>
         <Social />
         <p className='text-center text-sm mt-3.5'>
-          Serveware Sistemas © {year}
+          Serveware Sistemas © 2020 - {year}
         </p>
       </footer>
     </div>

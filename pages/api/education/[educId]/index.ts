@@ -40,7 +40,7 @@ const Education = async (
   const educations = await getEducationById(educId)
 
   //@ts-ignore
-  return res.send({ educations })
+  return res.send(educations)
 }
 
 export default Education
