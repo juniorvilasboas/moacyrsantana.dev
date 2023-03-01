@@ -24,7 +24,7 @@ Este projeto pode ser colocado em produção utilizando o [Vercel](https://verce
 ## Construido com:
 
 - [NodeJS](https://nodejs.org) - The React Framework
-- [TaildindCSS](https://tailwindcss.com/) - A utility-first CSS framework for rapidly custom designs.
+- [TailwindCSS](https://tailwindcss.com/) - A utility-first CSS framework for rapidly custom designs.
 - [Figma](https://www.figma.com) - Online prototyping tool.
 - [PurgeCSS](https://purgecss.com) - Remove unused CSS.
 
