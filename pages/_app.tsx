@@ -1,16 +1,20 @@
+import '../styles/globals.css'
 import LayoutPublic from 'components/Layout/LayoutPublic'
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import Script from 'next/script'
 import React from 'react'
-import '../styles/globals.css'
+import LayoutEmpty from 'components/Layout/LayoutEmpty'
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const router = useRouter()
   const { pathname } = router
-  let Layout = LayoutPublic
+  let Layout = LayoutEmpty
   if (pathname.indexOf('/panel') === 0) {
     return <Component {...pageProps} />
+  }
+  if (pathname.indexOf('/site') === 0) {
+    Layout = LayoutPublic
   }
 
   return (

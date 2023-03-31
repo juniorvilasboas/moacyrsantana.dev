@@ -3,7 +3,7 @@ import prisma from '../lib/prisma'
 
 export const getLevelSkil = async () => {
   const levels = await prisma.$queryRaw(
-    Prisma.sql`SELECT * FROM public."Level" WHERE item in (1,2,3,4,5)`
+    Prisma.sql`SELECT * FROM public."Level" WHERE item in (1,2,3,4)`
   )
 
   return levels
@@ -11,7 +11,7 @@ export const getLevelSkil = async () => {
 
 export const getLevelLanguage = async () => {
   const levels = await prisma.$queryRaw(
-    Prisma.sql`SELECT value, label FROM public."Level" WHERE item in (6,7,8,9,10,11)`
+    Prisma.sql`SELECT value, label FROM public."Level" WHERE item in (5,6,7,8,9,10)`
   )
 
   return levels

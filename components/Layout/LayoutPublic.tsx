@@ -7,7 +7,7 @@ interface Props {
   children: React.ReactNode
 }
 
-const Layout = ({ children }: Props) => {
+const LayoutPublic = ({ children }: Props) => {
   const [active, setActive] = useState(false)
   const handleClick = () => {
     setActive(!active)
@@ -79,10 +79,16 @@ const Layout = ({ children }: Props) => {
                 <div className='hidden sm:block sm:ml-6'>
                   <div className='flex space-x-4'>
                     {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-                    <Menu.WebLink href={'/'}>Home</Menu.WebLink>
-                    <Menu.WebLink href={'/education'}>Education</Menu.WebLink>
-                    <Menu.WebLink href={'/experience'}>Experience</Menu.WebLink>
-                    <Menu.WebLink href={'/portifolio'}>Portifolio</Menu.WebLink>
+                    <Menu.WebLink href={'/site'}>Home</Menu.WebLink>
+                    <Menu.WebLink href={'/site/education'}>
+                      Education
+                    </Menu.WebLink>
+                    <Menu.WebLink href={'/site/experience'}>
+                      Experience
+                    </Menu.WebLink>
+                    <Menu.WebLink href={'/site/portifolio'}>
+                      Portifolio
+                    </Menu.WebLink>
                   </div>
                 </div>
               </div>
@@ -91,10 +97,16 @@ const Layout = ({ children }: Props) => {
           {/* Mobile menu, show/hide based on menu state. */}
           {active && (
             <Menu.Mobile>
-              <Menu.MobileLink href={'/'}>Home</Menu.MobileLink>
-              <Menu.MobileLink href={'/education'}>Education</Menu.MobileLink>
-              <Menu.MobileLink href={'/experience'}>Experience</Menu.MobileLink>
-              <Menu.MobileLink href={'/portifolio'}>Portifolio</Menu.MobileLink>
+              <Menu.MobileLink href={'/site'}>Home</Menu.MobileLink>
+              <Menu.MobileLink href={'/site/education'}>
+                Education
+              </Menu.MobileLink>
+              <Menu.MobileLink href={'/site/experience'}>
+                Experience
+              </Menu.MobileLink>
+              <Menu.MobileLink href={'/site/portifolio'}>
+                Portifolio
+              </Menu.MobileLink>
             </Menu.Mobile>
           )}
         </Menu.Nav>
@@ -107,4 +119,4 @@ const Layout = ({ children }: Props) => {
   )
 }
 
-export default Layout
+export default LayoutPublic

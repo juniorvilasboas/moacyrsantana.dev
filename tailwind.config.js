@@ -10,8 +10,10 @@ module.exports = {
     fontFamily: {
       sans: ['Titillium Web']
     },
-
     extend: {
+      backgroundImage: {
+        "relogio": "url('/images/relogio.gif')"
+      },
       colors: {
         dourado: '#D6B21F'
       }
