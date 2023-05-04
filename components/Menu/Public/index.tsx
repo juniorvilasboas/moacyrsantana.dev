@@ -4,6 +4,7 @@ import React from 'react'
 
 interface Props {
   children: React.ReactNode
+  id?: string
 }
 
 const Menu = ({ children }: Props) => {
@@ -51,21 +52,23 @@ const MenuWebLink = ({ children, href }: PropsLink) => {
   return (
     <Link
       href={href}
-      className={
+      className={`px-3 py-2 rounded-md text-sm font-medium ${
         selected
-          ? 'bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium'
-          : 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
-      }
+          ? 'bg-padrao text-white'
+          : 'text-gray-300 hover:bg-padrao hover:text-white'
+      }`}
     >
       {children}
     </Link>
   )
 }
 
-const MenuMobile = ({ children }: Props) => {
+const MenuMobile = ({ children, id }: Props) => {
   return (
     <div className='sm:hidden' id='mobile-menu'>
-      <div className='px-2 pt-2 pb-3 space-y-1'>{children}</div>
+      <div id={id} className='px-2 pt-2 pb-3 space-y-1'>
+        {children}
+      </div>
     </div>
   )
 }
@@ -77,11 +80,11 @@ const MenuMobileLink = ({ children, href }: PropsLink) => {
   return (
     <Link
       href={href}
-      className={
+      className={` block px-3 py-2 rounded-md text-base font-medium ${
         selected
-          ? 'bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium'
-          : 'text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
-      }
+          ? 'bg-gray-900 text-white'
+          : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+      }`}
     >
       {children}
     </Link>

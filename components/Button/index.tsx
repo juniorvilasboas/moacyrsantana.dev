@@ -3,13 +3,22 @@ import React from 'react'
 
 interface Props {
   children: React.ReactNode
+  type: any
+  tipo: string
+  w?: string
 }
 
-const Button = ({ children, ...props }: Props) => {
+const Button = ({ children, type, tipo, w = 'auto', ...rest }: Props) => {
   return (
     <button
-      className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
-      {...props}
+      type={type}
+      className={
+        // inline-block w-full py-3 rounded text-sm leading-normal text-white font-medium uppercase transition duration-150 ease-in-out bg-loss hover:bg-gain
+        `w-${w} py-2 md:py-3 px-3 md:px-4 rounded-lg text-sm md:text-md font-medium bg-${tipo} hover:bg-${tipo}up hover:text-black leading-normal capitalize transition duration-150 ease-in-out ${
+          type === 'disabled' ? 'text-black' : 'text-white'
+        }`
+      }
+      {...rest}
     >
       {children}
     </button>

@@ -1,13 +1,13 @@
 import React from 'react'
 
 interface Props {
-  children: string
+  children: React.ReactNode
   showIcon?: boolean
 }
 
 const Alert = ({ children, showIcon = true }: Props) => {
   return (
-    <div className='mt-8'>
+    <div className='mt-4'>
       <div className='rounded-md flex items-center jusitfy-between px-5 py-4 mb-2 border border-blue-500 text-blue-500'>
         <div className='w-full flex items-center'>
           {showIcon && (

@@ -12,10 +12,10 @@ const Menu = ({ children }: Props) => {
 }
 const MenuBrand = ({ children }: Props) => {
   return (
-    <div className='bg-gray-900 flex items-center justify-start'>
-      <p className='font-bold text-white text-xl py-6 ml-8'>
+    <div className='bg-dourado flex items-center justify-start'>
+      <div className='font-bold text-white text-xl py-3 ml-8'>
         {children} <br />
-      </p>
+      </div>
     </div>
   )
 }
@@ -43,7 +43,7 @@ const MenuLink = ({ children, href, Icon }: PropsLink) => {
       href={href}
       className={
         selected
-          ? 'w-full bg-gray-900 text-gray-100 dark:text-white flex items-center pl-6 p-2 my-2 transition-colors duration-200 justify-start border-l-4 border-purple-500'
+          ? 'w-full bg-gray-900 text-gray-100 dark:text-white flex items-center pl-6 p-2 my-2 transition-colors duration-200 justify-start border-l-4 border-dourado'
           : 'w-full text-gray-400 flex items-center pl-6 p-2 my-2 transition-colors duration-200 justify-start hover:bg-gray-900 hover:text-gray-100 border-l-4 border-transparent'
       }
     >
