@@ -1,4 +1,4 @@
-import { Information, Prisma } from '@prisma/client'
+import { Information, User, Prisma } from '@prisma/client'
 import { NextApiRequest, NextApiResponse } from 'next'
 import { create, getInformation } from 'services/information'
 

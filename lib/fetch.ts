@@ -14,6 +14,17 @@ export const post = async ({ url, data }: IPost) => {
   return res.json()
 }
 
+export const postImage = async ({ url, data }: IPost) => {
+  const res = await fetch(url, {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'content-type': 'multipart/form-data; boundary=${formData.getBoundary()}'
+    }
+  })
+  return res.json()
+}
+
 export const patch = async ({ url, data }: IPost) => {
   const res = await fetch(url, {
     method: 'PATCH',

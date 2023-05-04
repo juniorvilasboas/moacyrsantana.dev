@@ -1,15 +1,14 @@
 import React from 'react'
 import { useGet } from 'hooks/api'
 import { format } from 'date-fns'
+import Page from 'components/Page'
 
 const Experience = () => {
   const { data: experiences } = useGet('/api/experience')
   return (
     <div>
-      <h3 className=' text-dourado text-2xl font-bold text-center uppercase mt-16 mb-8'>
-        My Experience
-      </h3>
-      <div className='md:grid lg:grid-cols-2 mx-auto'>
+      <Page title='Experience' />
+      <div className='md:grid lg:grid-cols-2 md:mx-auto'>
         {experiences &&
           experiences.map((experience: any) => (
             <div
@@ -18,12 +17,14 @@ const Experience = () => {
             >
               <div className='flex-auto py-4 px-4'>
                 <div className='relative flex flex-wrap'>
-                  <h1 className='text-dourado text-xs md:text-lg uppercase font-bold flex-auto dark:text-white'>
+                  <h1 className='text-dourado text-xs md:text-lg capitalize font-bold flex-auto dark:text-white'>
                     {experience.role}
                   </h1>
                   <span className='absolute right-0 text-xs lg:text-sm dark:text-white'>
                     {format(new Date(experience.begin), 'MM/dd/yyyy')} -{' '}
-                    {experience.end ? format(new Date(experience.end), 'MM/dd/yyyy') : 'In Progress'}
+                    {experience.end
+                      ? format(new Date(experience.end), 'MM/dd/yyyy')
+                      : 'In Progress'}
                   </span>
                 </div>
                 <div className='flex text-xs md:text-base'>

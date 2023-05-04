@@ -3,6 +3,11 @@ import prisma from '../lib/prisma'
 
 export const getLanguage = async () => {
   const languages = await prisma.language.findMany({
+    include: {
+      levelUnderstand: true,
+      levelSpeak: true,
+      levelWrite: true
+    },
     orderBy: {
       item: 'asc'
     }
@@ -15,6 +20,11 @@ export const getLanguageById = async (id: string) => {
   const language = await prisma.language.findFirst({
     where: {
       id
+    },
+    include: {
+      levelUnderstand: true,
+      levelSpeak: true,
+      levelWrite: true
     }
   })
 
@@ -24,7 +34,23 @@ export const getLanguageById = async (id: string) => {
 export const create = async (
   languageData: Prisma.LanguageCreateInput
 ): Promise<Language | null> => {
-  const savedLanguage = await prisma.language.create({ data: languageData })
+  const savedLanguage = await prisma.language.create({
+    data: {
+      name: languageData.name,
+      levelUnderstand: {
+        //@ts-ignore
+        connect: languageData.levelUnderstand
+      },
+      levelSpeak: {
+        //@ts-ignore
+        connect: languageData.levelSpeak
+      },
+      levelWrite: {
+        //@ts-ignore
+        connect: languageData.levelWrite
+      }
+    }
+  })
 
   if (savedLanguage) {
     return savedLanguage
@@ -37,7 +63,21 @@ export const update = async (
   languageData: Prisma.LanguageUpdateInput
 ): Promise<Language | null> => {
   const savedLanguage = await prisma.language.update({
-    data: languageData,
+    data: {
+      name: languageData.name,
+      levelUnderstand: {
+        //@ts-ignore
+        connect: languageData.levelUnderstand
+      },
+      levelSpeak: {
+        //@ts-ignore
+        connect: languageData.levelSpeak
+      },
+      levelWrite: {
+        //@ts-ignore
+        connect: languageData.levelWrite
+      }
+    },
     where: {
       id
     }

@@ -24,6 +24,10 @@ export const getExperienceById = async (id: string) => {
 export const create = async (
   experienceData: Prisma.ExperienceCreateInput
 ): Promise<Experience | null> => {
+  experienceData.begin = new Date(experienceData.begin)
+  if (experienceData.end) {
+    experienceData.end = new Date(experienceData.end)
+  }
   const savedExperience = await prisma.experience.create({
     data: experienceData
   })

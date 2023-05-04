@@ -8,19 +8,22 @@ datasource db {
 }
 
 model Account {
-  id                String  @id @default(cuid())
-  userId            String
-  type              String
-  provider          String
-  providerAccountId String
-  refresh_token     String?
-  access_token      String?
-  expires_at        Int?
-  token_type        String?
-  scope             String?
-  id_token          String?
-  session_state     String?
-  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id                 String  @id @default(cuid())
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?
+  access_token       String?
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?
+  session_state      String?
+  oauth_token_secret String?
+  oauth_token        String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
 }
@@ -35,10 +38,13 @@ model Session {
 
 model User {
   id            String    @id @default(cuid())
-  name          String?
-  email         String?   @unique
+  firstName     String
+  lastName      String
+  email         String    @unique
+  password      String
   emailVerified DateTime?
   image         String?
+  isActive      String    @default("1") @db.Char(1)
   accounts      Account[]
   sessions      Session[]
 }
@@ -52,29 +58,37 @@ model VerificationToken {
 }
 
 model Level {
-  id          String  @id @default(cuid())
-  item        Int     @default(autoincrement())
-  value       String  @db.VarChar(255)
-  label       String  @db.VarChar(255)
-  description String? @db.VarChar(255)
-  skil        Skil[]
+  id                 String     @id @default(cuid())
+  item               Int        @default(autoincrement())
+  value              String     @db.VarChar(255)
+  label              String     @db.VarChar(255)
+  description        String?    @db.VarChar(255)
+  skill              Skill[]
+  LanguageUnderstand Language[] @relation("levelUnderstand")
+  LanguageSpeak      Language[] @relation("levelSpeak")
+  LanguageWrite      Language[] @relation("levelWrite")
 }
 
 model Language {
-  id            String @id @default(cuid())
-  item          Int    @default(autoincrement())
-  name          String @db.VarChar(255)
-  understanding String @db.VarChar(255)
-  speaking      String @db.VarChar(255)
-  writing       String @db.VarChar(255)
+  id              String @id @default(cuid())
+  item            Int    @default(autoincrement())
+  name            String @db.VarChar(255)
+  understandingId String @db.VarChar(255)
+  levelUnderstand Level? @relation("levelUnderstand", fields: [understandingId], references: [id])
+  speakingId      String @db.VarChar(255)
+  levelSpeak      Level? @relation("levelSpeak", fields: [speakingId], references: [id])
+  writingId       String @db.VarChar(255)
+  levelWrite      Level? @relation("levelWrite", fields: [writingId], references: [id])
 }
 
 model Education {
   id          String    @id @default(cuid())
-  degree      String    @db.VarChar(255)
-  subject     String    @db.VarChar(255)
+  tipo        String    @db.VarChar(255)
   institution String    @db.VarChar(255)
   site        String?   @db.VarChar(255)
+  degree      String    @db.VarChar(255)
+  subject     String    @db.VarChar(255)
+  courseload  Int?
   begin       DateTime
   end         DateTime?
 }
@@ -82,7 +96,7 @@ model Education {
 model Experience {
   id          String    @id @default(cuid())
   role        String    @db.VarChar(255)
-  type        String    @db.VarChar(255)
+  tipo        String    @db.VarChar(255)
   company     String    @db.VarChar(255)
   city        String    @db.VarChar(255)
   country     String    @db.VarChar(255)
@@ -106,12 +120,11 @@ model Portifolio {
   name        String  @db.VarChar(255)
   site        String? @db.VarChar(255)
   category    String  @db.VarChar(255)
-  subject     String  @db.VarChar(255)
   description String  @db.VarChar(255)
-  skills      Skil[]  @relation("PortifolioToSkil")
+  skills      Skill[] @relation("PortifolioToSkil")
 }
 
-model Skil {
+model Skill {
   id         String       @id @default(cuid())
   name       String       @db.VarChar(255)
   site       String?      @db.VarChar(255)

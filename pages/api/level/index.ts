@@ -1,6 +1,6 @@
 import { Level, Prisma } from '@prisma/client'
 import { NextApiRequest, NextApiResponse } from 'next'
-import { create, getLevelLanguage, getLevelSkil } from 'services/level'
+import { create, getLevelLanguage, getLevelSkill } from 'services/level'
 
 const Level = async (
   req: NextApiRequest,
@@ -19,8 +19,8 @@ const Level = async (
     levels = await getLevelLanguage()
   }
 
-  if (req.query.tipo === 'skil') {
-    levels = await getLevelSkil()
+  if (req.query.tipo === 'skill') {
+    levels = await getLevelSkill()
   }
 
   //@ts-ignore

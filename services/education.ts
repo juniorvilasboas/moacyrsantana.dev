@@ -2,7 +2,14 @@ import { Education, Prisma } from '@prisma/client'
 import prisma from '../lib/prisma'
 
 export const getEducation = async () => {
+  const educationByTipo = await prisma.education.groupBy({
+    by: ['tipo'],
+  })
+
   const educations = await prisma.education.findMany({
+    where: {
+      tipo: { in: educationByTipo.map((education) => education.tipo)}
+    },
     orderBy: {
       begin: 'desc'
     }

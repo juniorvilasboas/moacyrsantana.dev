@@ -16,6 +16,8 @@ const Education = async (
   if (req.method === 'PATCH') {
     const educationData: Prisma.EducationUpdateInput = { ...req.body }
 
+    console.log(educationData)
+
     const educationItem = await getEducationById(educId)
 
     if (educationItem) {

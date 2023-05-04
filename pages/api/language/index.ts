@@ -9,6 +9,9 @@ const Language = async (
   if (req.method === 'POST') {
     const language: Prisma.LanguageCreateInput = { ...req.body }
 
+    language.levelUnderstand = { id: language.levelUnderstand}
+    language.levelSpeak = { id: language.levelSpeak}
+    language.levelWrite = { id: language.levelWrite}
     const savedLanguage = await create(language)
 
     return res.send(savedLanguage)

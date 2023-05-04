@@ -1,5 +1,6 @@
-import Img from 'components/Img'
-import SkilItem from 'components/Skills/SkilItem'
+import Image from 'components/Image/image'
+import Page from 'components/Page'
+import SkilImage from 'components/Skills/SkilImage'
 import { useGet } from 'hooks/api'
 import Link from 'next/link'
 
@@ -7,9 +8,7 @@ const Portifolio = () => {
   const { data: portifolios } = useGet('/api/portifolio')
   return (
     <div>
-      <h3 className=' text-dourado text-2xl font-bold text-center uppercase mt-16 mb-8'>
-        My Portifolio
-      </h3>
+      <Page title='Portifolio' />
       <div className='md:grid lg:grid-cols-2 mx-auto'>
         {portifolios &&
           portifolios.map((portifolio: any) => (
@@ -19,7 +18,7 @@ const Portifolio = () => {
             >
               <div className='flex-none w-24 md:w-48 relative'>
                 <div className='py-6 px-2 w-24 md:w-48 text-right text-sm md:text-lg font-bold'>
-                  <Img
+                  <Image
                     src={portifolio.layout}
                     alt='shopping image'
                     h={150}
@@ -41,7 +40,7 @@ const Portifolio = () => {
                   <>
                     <p className='mb-2'>
                       {portifolio.skills.map((tech: any) => (
-                        <SkilItem
+                        <SkilImage
                           key={tech.id}
                           item={tech}
                           css='h-6 md:h-8 inline-block mr-4'

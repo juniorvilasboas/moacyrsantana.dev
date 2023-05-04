@@ -9,6 +9,7 @@ const Portifolio = async (
   if (req.method === 'POST') {
     const portifolio: Prisma.PortifolioCreateInput = { ...req.body }
 
+    console.log(portifolio)
     const savedPortifolio = await create(portifolio)
 
     return res.send(savedPortifolio)

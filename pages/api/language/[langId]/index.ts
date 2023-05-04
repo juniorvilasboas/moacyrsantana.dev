@@ -19,6 +19,10 @@ const Language = async (
     const languageItem = await getLanguageById(langId)
 
     if (languageItem) {
+      languageData.levelUnderstand = { id: languageData.levelUnderstand}
+      languageData.levelSpeak = { id: languageData.levelSpeak}
+      languageData.levelWrite = { id: languageData.levelWrite}
+
       const savedLanguage = await update(langId, languageData)
 
       return res.send({ data: savedLanguage, success: true })

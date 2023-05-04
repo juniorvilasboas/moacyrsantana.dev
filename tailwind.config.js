@@ -12,11 +12,16 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        "relogio": "url('/images/relogio.gif')"
+        'password': 'url("https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg5.svg")'
       },
       colors: {
-        dourado: '#D6B21F'
+        'dourado': '#D6B21F',
+        'padrao': '#0000FF',
+        'padraoup': '#00BFFF',
+        'cancel': '#e60000',
+        'cancelup': '#ff0000'
       }
-    }
-  }
+    },
+  },
+  plugins: [],
 }
