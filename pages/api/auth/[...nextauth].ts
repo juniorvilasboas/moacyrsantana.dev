@@ -34,11 +34,13 @@ export default NextAuth({
         // descubra o usuário do banco de dados
         const user = await prisma.user.findFirst({
           where: {
+            //@ts-ignore
             email: credentials.email
           }
         })
-
+        
         if (user !== null) {
+          //@ts-ignore
           const res = await confirmPasswordHash(credentials.password, user.password)
           if (res === true) {
             userAccount = {
@@ -135,6 +137,7 @@ export default NextAuth({
   // when an action is performed.
   // https://next-auth.js.org/configuration/callbacks
   callbacks: {
+    //@ts-ignore
     async signIn({ user }) {
       if (user !== undefined) {
         //@ts-ignore
@@ -142,11 +145,12 @@ export default NextAuth({
           return user
         }
       }
-
+      
       return false
     },
     //async redirect({ url, baseUrl }) { return baseUrl },
     async session({ session, token, user }) {
+      //@ts-ignore
         session.user.id = token.sub
 
         return session;
