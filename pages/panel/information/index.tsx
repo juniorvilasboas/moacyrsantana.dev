@@ -71,11 +71,15 @@ const Index = () => {
               className='w-full mx-auto rounded-lg bg-white dark:bg-gray-800 shadow-lg px-6 pt-5 pb-10 text-gray-800 dark:text-gray-50'
             >
               <div className='w-auto text-center -mt-16'>
-                <img
+                <Image
                   name='image'
                   onClick={handleImageClick}
+                  //@ts-ignore
                   alt={session?.user?.name}
+                  //@ts-ignore
                   src={session?.user?.image}
+                  width={20}
+                  height={20}
                   className='mx-auto object-cover bg-white rounded-full h-20 w-20 '
                 />
               </div>

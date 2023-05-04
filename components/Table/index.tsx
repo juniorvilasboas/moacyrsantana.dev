@@ -106,33 +106,33 @@ const TableTd = ({ children, css }: Props1) => {
   )
 }
 
-const TableDataTitle = ({ title, name }) => {
-  return (
-    <>
-      <div className='text-sm leading-5 font-medium text-gray-900'>{title}</div>
-      <div className='text-sm leading-5 text-gray-500'>{name}</div>
-    </>
-  )
-}
+// const TableDataTitle = ({ title, name }) => {
+//   return (
+//     <>
+//       <div className='text-sm leading-5 font-medium text-gray-900'>{title}</div>
+//       <div className='text-sm leading-5 text-gray-500'>{name}</div>
+//     </>
+//   )
+// }
 
-const TableLink = ({ children, href, ...rest }) => {
-  return (
-    <Link
-      className='inline-block mx-1 text-indigo-600 hover:text-indigo-900'
-      {...rest}
-      href={href}
-    >
-      {children}
-    </Link>
-  )
-}
+// const TableLink = ({ children, href, ...rest }) => {
+//   return (
+//     <Link
+//       className='inline-block mx-1 text-indigo-600 hover:text-indigo-900'
+//       {...rest}
+//       href={href}
+//     >
+//       {children}
+//     </Link>
+//   )
+// }
 
 Table.Head = TableHead
 Table.Th = TableTh
 Table.Body = TableBody
 Table.Tr = TableTr
 Table.Td = TableTd
-Table.DataTitle = TableDataTitle
-Table.Link = TableLink
+// Table.DataTitle = TableDataTitle
+// Table.Link = TableLink
 
 export default Table
