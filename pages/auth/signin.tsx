@@ -8,6 +8,7 @@ import Button from 'components/Button'
 import Input from 'components/Input/input'
 import InputPassword from 'components/Input/inputPassword'
 import { useGet } from 'hooks/api'
+import Image from 'next/image'
 
 const contaSchema = yup
   .object({
@@ -51,10 +52,12 @@ const SignIn = () => {
       <div className='bg-white rounded-md shadow-md w-auto md:w-2/3 lg:w-1/3 p-6'>
         <div className='flex items-center justify-center my-5'>
           <Link href={'/'}>
-            <img
+            <Image
               src='/logo_long.png'
               alt='logo'
               className='mb-4 w-48 lg:w-80'
+              width={48}
+              height={48}
             />
           </Link>
         </div>

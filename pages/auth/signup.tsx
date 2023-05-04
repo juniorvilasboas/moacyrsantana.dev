@@ -9,6 +9,7 @@ import Button from 'components/Button'
 import Input from 'components/Input/input'
 import InputPassword from 'components/Input/inputPassword'
 import { useGet } from 'hooks/api'
+import Image from 'next/image'
 
 const userSchema = yup
   .object({
@@ -57,7 +58,13 @@ const SignUp = () => {
     <div className='relative h-screen bg-signinFundo bg-cover flex flex-col items-center justify-center'>
       <div className='bg-white rounded-md shadow-md w-auto lg:w-1/3 p-6'>
         <div className='flex items-center justify-center my-5'>
-          <img src='/logo_long.png' alt='logo' className='mb-4 w-48 lg:w-80' />
+          <Image
+            src='/logo_long.png'
+            alt='logo'
+            className='mb-4 w-48 lg:w-80'
+            width={48}
+            height={48}
+          />
         </div>
         <p
           tabIndex={0}
