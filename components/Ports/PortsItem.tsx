@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 const PortsItem = ({ portifolio }: any) => {
@@ -9,10 +10,12 @@ const PortsItem = ({ portifolio }: any) => {
         rel='noreferrer'
         className='w-full'
       >
-        <img
+        <Image
           alt={portifolio.name}
           src={portifolio.layout}
           className='w-full h-36'
+          width={36}
+          height={36}
         />
       </Link>
       <h4 className='text-center mt-8 pb-6'>{portifolio.name}</h4>

@@ -53,10 +53,12 @@ const Hero = () => {
             priority
           />
         </div>
-        <img
+        <Image
           className='esquerda mx-auto h-80 lg:h-96 mt-12 md:mt-2 pt-4 sm:ml-8 lg:ml-24'
           src='/images/foto.png'
           alt='foto'
+          width={300}
+          height={50}
         />
       </div>
     </div>

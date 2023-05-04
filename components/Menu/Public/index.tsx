@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React from 'react'
@@ -19,12 +20,20 @@ const MenuLogo = () => {
   return (
     <div className='flex-shrink-0 flex items-center'>
       <span className='block lg:hidden w-auto'>
-        <img className='h-6 w-auto' src='/logo_short.png' alt='Resume' />
+        <Image
+          width={6}
+          height={6}
+          className='h-6 w-auto'
+          src='/logo_short.png'
+          alt='Resume'
+        />
       </span>
-      <img
+      <Image
         className='hidden lg:block h-6 w-auto'
         src='/Logo_long.png'
         alt='Workflow'
+        width={6}
+        height={6}
       />
     </div>
   )
