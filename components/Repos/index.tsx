@@ -6,7 +6,7 @@ const Repos = () => {
   const { data } = useGet('/api/reposition')
   return (
     <div>
-      <h3 className='text-dourado text-2xl font-bold text-center uppercase mt-16'>
+      <h3 className='text-dourado text-xl md:text-2xl font-bold text-center uppercase mt-16'>
         Github Repositories
       </h3>
       <UserStats user={data?.user} />

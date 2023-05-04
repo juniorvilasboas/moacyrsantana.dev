@@ -9,7 +9,11 @@ const PortsItem = ({ portifolio }: any) => {
         rel='noreferrer'
         className='w-full'
       >
-        <img src={portifolio.layout} className='w-full h-36' />
+        <img
+          alt={portifolio.name}
+          src={portifolio.layout}
+          className='w-full h-36'
+        />
       </Link>
       <h4 className='text-center mt-8 pb-6'>{portifolio.name}</h4>
     </div>

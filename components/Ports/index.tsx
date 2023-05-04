@@ -7,7 +7,7 @@ const Ports = () => {
   if (portifolios && portifolios.length > 0) {
     return (
       <div>
-        <h3 className='text-dourado text-2xl font-bold text-center uppercase mt-16 mb-5 hover:underline'>
+        <h3 className='text-dourado text-xl md:text-2xl font-bold text-center uppercase mt-16 mb-5 hover:underline'>
           <Link href={'/portifolio'} passHref>
             Portfolios
           </Link>

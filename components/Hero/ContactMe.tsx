@@ -1,7 +1,9 @@
+import { useGet } from 'hooks/api'
 import Link from 'next/link'
 import { FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa'
 
 const ContactMe = () => {
+  const { data } = useGet('/api/user')
   return (
     <div className='relative border border-dourado rounded-xl px-10 lg:px-14 pb-4 pt-10 mt-8 lg:mt-6'>
       <h3 className='absolute rounded-xl bg-dourado text-white py-2 px-4 md:px-6 top-0 -mt-5 text-lg md:text-xl font-bold uppercase'>
@@ -27,7 +29,7 @@ const ContactMe = () => {
             href='mailto:junior.vilasboas@gmail.com'
             className='hover:text-dourado'
           >
-            junior.vilasboas@gmail.com
+            {data?.email}
           </Link>
         </span>
       </p>

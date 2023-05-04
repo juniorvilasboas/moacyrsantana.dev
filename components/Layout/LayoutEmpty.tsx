@@ -4,14 +4,8 @@ interface Props {
   children: React.ReactNode
 }
 
-const LayoutEmpty = ({ children }: Props) => {
-  return (
-    <>
-      <div className='w-full h-screen flex items-center justify-center bg-dourado'>
-        {children}
-      </div>
-    </>
-  )
+const LayoutPanel = ({ children }: Props) => {
+  return <>{children}</>
 }
 
-export default LayoutEmpty
+export default LayoutPanel

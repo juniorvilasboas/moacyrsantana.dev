@@ -1,19 +1,19 @@
 import Link from 'next/link'
+import SkilImage from './SkilImage'
 
-// https://devicon.dev/
-
-const SkilItem = ({ item, css }: any) => {
+const SkilItem = ({ skil }: any) => {
   return (
     <Link
-      href={`https://` + item.site}
+      href={skil.site}
       passHref
       target='_blank'
       rel='noreferrer'
       className='mb-4'
     >
-      <img
-        className={css}
-        src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${item.name}/${item.name}-${item.ext}.svg`}
+      <SkilImage
+        key={skil.id}
+        item={skil}
+        css='h-8 md:h-12 inline-block mr-6'
       />
     </Link>
   )
