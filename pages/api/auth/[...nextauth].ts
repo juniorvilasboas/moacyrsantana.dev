@@ -12,7 +12,7 @@ import FacebookProvider from 'next-auth/providers/facebook'
 import bcrypt from 'bcrypt'
 let userAccount = null;
 
-const confirmPasswordHash = (plainPassword, hashedPassword) => {
+const confirmPasswordHash = (plainPassword: any, hashedPassword: any) => {
   return new Promise(resolve => {
       bcrypt.compare(plainPassword, hashedPassword, function(err, res) {
           resolve(res);
