@@ -121,7 +121,6 @@ CREATE TABLE "Portifolio" (
     "name" VARCHAR(255) NOT NULL,
     "site" VARCHAR(255),
     "category" VARCHAR(255) NOT NULL,
-    "subject" VARCHAR(255) NOT NULL,
     "description" VARCHAR(255) NOT NULL,
 
     CONSTRAINT "Portifolio_pkey" PRIMARY KEY ("id")
