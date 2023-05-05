@@ -34,7 +34,7 @@ interface EducationForm {
   courseload: number
   begin: Date
   check: Boolean
-  end: Date
+  end: Date | null
 }
 
 const EditDegree = () => {

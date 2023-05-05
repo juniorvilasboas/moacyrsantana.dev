@@ -18,7 +18,7 @@ const Skill = async (
 
     const skillItem = await getSkillById(skillId)
 
-    skillData.level = {id: skillData.level}
+    skillData.level = skillData.level
     if (skillItem) {
       const savedSkill = await update(skillId, skillData)
 

@@ -7,7 +7,7 @@ const Skill = async (req: NextApiRequest, res: NextApiResponse<Skill | null>) =>
     const skill: Prisma.SkillCreateInput = { ...req.body }
 
     //@ts-ignore
-    skill.level = {id: skill.level}
+    skill.level = skill.level
     if (skill.site === '') {
       skill.site = '#'
     } else {

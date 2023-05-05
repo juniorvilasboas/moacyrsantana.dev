@@ -19,12 +19,9 @@ const Language = async (
     const languageItem = await getLanguageById(langId)
 
     if (languageItem) {
-      //@ts-ignore
-      languageData.levelUnderstand = { id: languageData.levelUnderstand}
-      //@ts-ignore
-      languageData.levelSpeak = { id: languageData.levelSpeak}
-      //@ts-ignore
-      languageData.levelWrite = { id: languageData.levelWrite}
+      languageData.levelUnderstand = languageData.levelUnderstand
+      languageData.levelSpeak = languageData.levelSpeak
+      languageData.levelWrite = languageData.levelWrite
 
       const savedLanguage = await update(langId, languageData)
 

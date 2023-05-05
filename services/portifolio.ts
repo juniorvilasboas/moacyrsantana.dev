@@ -35,7 +35,6 @@ export const create = async (
       layout: portifolioData.layout,
       name: portifolioData.name,
       category: portifolioData.category,
-      subject: portifolioData.subject,
       description: portifolioData.description,
       site: portifolioData.site,
       skills: {
@@ -60,7 +59,6 @@ export const update = async (
       layout: portifolioData.layout,
       name: portifolioData.name,
       category: portifolioData.category,
-      subject: portifolioData.subject,
       description: portifolioData.description,
       site: portifolioData.site,
       skills: {

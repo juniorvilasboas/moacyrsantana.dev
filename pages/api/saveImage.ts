@@ -11,39 +11,39 @@ export const config = {
 }
 
 const saveImage = async (req: NextApiRequest, res: NextApiResponse) => {
-    try {
-        await new Promise<void>((resolve, reject) => {
-            upload.single('image')(req, res, (error) => {
-                if (error) {
-                    reject(error)
-                }
-                resolve()
-            })
-        })
+    // try {
+    //     await new Promise<void>((resolve, reject) => {
+    //         upload.single('image')(req, res, (error) => {
+    //             if (error) {
+    //                 reject(error)
+    //             }
+    //             resolve()
+    //         })
+    //     })
 
-        console.log(req.file)
-        const { originalname, mimetype, size, path } = req.file
-        console.log(`Imagem original ${originalname} (${mimetype}, ${size} bytes)`)
+    //     console.log(req.file)
+    //     const { originalname, mimetype, size, path } = req.file
+    //     console.log(`Imagem original ${originalname} (${mimetype}, ${size} bytes)`)
 
-        const writeStream = createWriteStream(`public/images/${originalname}`)
-        const readStream = createReadStream(path)
-        readStream.pipe(writeStream)
+    //     const writeStream = createWriteStream(`public/images/${originalname}`)
+    //     const readStream = createReadStream(path)
+    //     readStream.pipe(writeStream)
 
-        await new Promise<void>((resolve, reject) => {
-            readStream.on('end', resolve)
-            readStream.on('error', reject)
-        })
+    //     await new Promise<void>((resolve, reject) => {
+    //         readStream.on('end', resolve)
+    //         readStream.on('error', reject)
+    //     })
 
-        console.log(`Imagem salva em public/images/${originalname}`)
+    //     console.log(`Imagem salva em public/images/${originalname}`)
 
-        res.status(200).end()
-        // const imageName = 'foto.jpg'
-        // const path = `public/images/user/${imageName}`
-        // await fs.promises.writeFile(path, Buffer.from(buffer))
-    } catch (err) {
-        console.error(err)
-        res.status(500).end()
-    }
+    //     res.status(200).end()
+    //     // const imageName = 'foto.jpg'
+    //     // const path = `public/images/user/${imageName}`
+    //     // await fs.promises.writeFile(path, Buffer.from(buffer))
+    // } catch (err) {
+    //     console.error(err)
+    //     res.status(500).end()
+    // }
 
 //   const filePath = path.join(
 //     process.cwd(),
