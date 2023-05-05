@@ -38,6 +38,8 @@ export default NextAuth({
             email: credentials.email
           }
         })
+
+        console.log("User: ", user)
         
         if (user !== null) {
           //@ts-ignore
