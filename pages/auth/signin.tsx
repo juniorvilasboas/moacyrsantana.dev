@@ -32,7 +32,7 @@ const SignIn = () => {
     handleSubmit,
     setValue,
     formState: { errors }
-  } = useForm<NewSigninForm>({
+  } = useForm({
     resolver: yupResolver(contaSchema)
   })
 
