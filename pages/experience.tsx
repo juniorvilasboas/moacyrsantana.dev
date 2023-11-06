@@ -31,7 +31,7 @@ const Experience = () => {
                   <p className='font-bold'>{experience.company}</p>
                 </div>
                 <div className='flex text-xs md:text-base capitalize'>
-                  {experience.type}&nbsp;- &nbsp;
+                  {experience.tipo}&nbsp;- &nbsp;
                   <span>
                     {experience.city} / {experience.country}
                   </span>

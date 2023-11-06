@@ -36,7 +36,7 @@ const Index = () => {
                     <SkilImage
                       key={skill.id}
                       item={skill}
-                      css='h-6 md:h-8 inline-block mr-4'
+                      css='h-6 w-6 md:h-8 md:w-8 inline-block mr-4'
                     />
                   </Table.Td>
                   <Table.Td>{skill.tipo}</Table.Td>

@@ -39,15 +39,24 @@ export const create = async (
       name: languageData.name,
       levelUnderstand: {
         //@ts-ignore
-        connect: languageData.levelUnderstand
+        connect: {
+          //@ts-ignore
+          id: languageData.levelUnderstand
+        }
       },
       levelSpeak: {
         //@ts-ignore
-        connect: languageData.levelSpeak
+        connect: {
+          //@ts-ignore
+          id: languageData.levelSpeak
+        }
       },
       levelWrite: {
         //@ts-ignore
-        connect: languageData.levelWrite
+        connect: {
+          //@ts-ignore
+          id: languageData.levelWrite
+        }
       }
     }
   })
@@ -67,15 +76,24 @@ export const update = async (
       name: languageData.name,
       levelUnderstand: {
         //@ts-ignore
-        connect: languageData.levelUnderstand
+        connect: {
+          //@ts-ignore
+          id: languageData.levelUnderstand
+        }
       },
       levelSpeak: {
         //@ts-ignore
-        connect: languageData.levelSpeak
+        connect: {
+          //@ts-ignore
+          id: languageData.levelSpeak
+        }
       },
       levelWrite: {
         //@ts-ignore
-        connect: languageData.levelWrite
+        connect: {
+          //@ts-ignore
+          id: languageData.levelWrite
+        }
       }
     },
     where: {

@@ -13,7 +13,7 @@ const SkilItem = ({ skil }: any) => {
       <SkilImage
         key={skil.id}
         item={skil}
-        css='h-8 md:h-12 inline-block mr-6'
+        css='h-10 w-10 md:h-12 md:w-12 inline-block mr-6'
       />
     </Link>
   )

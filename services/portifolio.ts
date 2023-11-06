@@ -39,7 +39,9 @@ export const create = async (
       site: portifolioData.site,
       skills: {
         //@ts-ignore
-        connect: portifolioData.skills
+        connect: {
+          id: portifolioData.skills
+        }
       }
     }
   })
@@ -63,7 +65,9 @@ export const update = async (
       site: portifolioData.site,
       skills: {
         //@ts-ignore
-        connect: portifolioData.skills
+        connect: {
+          id: portifolioData.skills
+        }
       }
     },
     where: {

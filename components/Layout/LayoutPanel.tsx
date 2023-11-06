@@ -9,7 +9,7 @@ import { GiSkills } from 'react-icons/gi'
 import { MdCastForEducation, MdLanguage } from 'react-icons/md'
 import { SiExpertsexchange } from 'react-icons/si'
 import { useRouter } from 'next/router'
-import Image from 'next/image'
+import Image from 'components/Image/image'
 
 interface Props {
   children: React.ReactNode
@@ -40,13 +40,7 @@ const LayoutPanel = ({ children }: Props) => {
                 <Menu.Brand>
                   <Link href={'/'}>
                     <div className='flex items-center justify-center'>
-                      <Image
-                        width={48}
-                        height={48}
-                        src='/logo_long.png'
-                        alt='logo'
-                        className='w-48'
-                      />
+                      <Image src='/logo_long.png' alt='logo' className='w-48' />
                     </div>
                   </Link>
                 </Menu.Brand>
@@ -115,8 +109,6 @@ const LayoutPanel = ({ children }: Props) => {
                           src={session?.user?.image}
                           //@ts-ignore
                           alt={session?.user?.name}
-                          width={8}
-                          height={8}
                         />
                       </div>
                     </button>

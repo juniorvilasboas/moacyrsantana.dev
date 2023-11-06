@@ -21,8 +21,6 @@ const Portifolio = () => {
                   <Image
                     src={portifolio.layout}
                     alt='shopping image'
-                    h={150}
-                    w={150}
                     css='absolute rounded-lg inset-0 w-full object-cover my-auto'
                   />
                 </div>
@@ -43,7 +41,7 @@ const Portifolio = () => {
                         <SkilImage
                           key={tech.id}
                           item={tech}
-                          css='h-6 md:h-8 inline-block mr-4'
+                          css='h-6 w-6 md:h-8 md:w-8 inline-block mr-4'
                         />
                       ))}
                     </p>

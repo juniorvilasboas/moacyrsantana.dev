@@ -8,11 +8,11 @@ const imageList = ({ srcImage }: PropsImage) => {
   return (
     <div className='flex items-center'>
       {srcImage?.length !== 0 && (
-        <div className='flex-shrink-0 h-10 w-10'>
+        <div className='flex-shrink-0 h-10 w-16'>
           <Image
-            width={10}
-            height={10}
-            className='h-10 w-10 rounded-xl'
+            width={600}
+            height={600}
+            className='h-10 w-16 rounded-xl'
             src={srcImage}
             alt=''
           />

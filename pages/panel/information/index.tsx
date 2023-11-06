@@ -8,7 +8,7 @@ import Header from 'components/Header'
 import Container from 'components/Container'
 import Alert from 'components/Alert'
 import Link from 'next/link'
-import Image from 'next/image'
+import Image from 'components/Image/image'
 
 const Index = () => {
   const { data: session } = useSession()
@@ -78,9 +78,7 @@ const Index = () => {
                   alt={session?.user?.name}
                   //@ts-ignore
                   src={session?.user?.image}
-                  width={20}
-                  height={20}
-                  className='mx-auto object-cover bg-white rounded-full h-20 w-20 '
+                  css='mx-auto object-cover bg-white rounded-full h-20 w-20 '
                 />
               </div>
               <div className='w-full mt-5 mb-10'>

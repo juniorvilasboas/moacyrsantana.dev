@@ -9,7 +9,7 @@ import Button from 'components/Button'
 import Input from 'components/Input/input'
 import InputPassword from 'components/Input/inputPassword'
 import { useGet } from 'hooks/api'
-import Image from 'next/image'
+import Image from 'components/Image/image'
 
 const userSchema = yup
   .object({
@@ -62,8 +62,6 @@ const SignUp = () => {
             src='/logo_long.png'
             alt='logo'
             className='mb-4 w-48 lg:w-80'
-            width={48}
-            height={48}
           />
         </div>
         <p

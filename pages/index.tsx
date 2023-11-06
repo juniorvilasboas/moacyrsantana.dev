@@ -11,7 +11,7 @@ const Home: NextPage = () => {
       <Hero />
       <Summary />
       <Education />
-      {/* <Repos /> */}
+      <Repos />
       <Ports />
     </>
   )

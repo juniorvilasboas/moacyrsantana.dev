@@ -57,7 +57,10 @@ export const create = async (
       //@ts-ignore
       level: {
         //@ts-ignore
-        connect: skillData.level
+        connect: {
+          //@ts-ignore
+          id: skillData.level
+        }
       }
     }
   })
@@ -81,7 +84,10 @@ export const update = async (
       //@ts-ignore
       level: {
         //@ts-ignore
-        connect: skillData.level
+        connect: {
+          //@ts-ignore
+          id: skillData.level
+        }
       }
     },
     where: {
