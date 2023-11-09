@@ -32,7 +32,8 @@ const SignIn = () => {
     handleSubmit,
     setValue,
     formState: { errors }
-  } = useForm({
+  } = useForm<NewSigninForm>({
+    //@ts-ignore
     resolver: yupResolver(contaSchema)
   })
 
